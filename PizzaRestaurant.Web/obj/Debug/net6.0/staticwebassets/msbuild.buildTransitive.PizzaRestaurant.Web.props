@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PizzaRestaurant.Web.props" />
+</Project>

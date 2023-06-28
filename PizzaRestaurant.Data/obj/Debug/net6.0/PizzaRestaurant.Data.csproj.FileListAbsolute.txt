@@ -1,0 +1,14 @@
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\bin\Debug\net6.0\PizzaRestaurant.Data.deps.json
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\bin\Debug\net6.0\PizzaRestaurant.Data.runtimeconfig.json
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\bin\Debug\net6.0\PizzaRestaurant.Data.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\bin\Debug\net6.0\PizzaRestaurant.Data.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.csproj.AssemblyReference.cache
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.AssemblyInfoInputs.cache
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.AssemblyInfo.cs
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.csproj.CoreCompileInputs.cache
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\refint\PizzaRestaurant.Data.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.genruntimeconfig.cache
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\ref\PizzaRestaurant.Data.dll
