@@ -20,4 +20,8 @@
     <ProjectReference Include="..\PizzaRestaurant.Data.Models\PizzaRestaurant.Data.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

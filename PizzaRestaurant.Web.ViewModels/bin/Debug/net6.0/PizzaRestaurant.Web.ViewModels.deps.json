@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "PizzaRestaurant.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "PizzaRestaurant.Common": "1.0.0"
+        },
         "runtime": {
           "PizzaRestaurant.Web.ViewModels.dll": {}
+        }
+      },
+      "PizzaRestaurant.Common/1.0.0": {
+        "runtime": {
+          "PizzaRestaurant.Common.dll": {}
         }
       }
     }
   },
   "libraries": {
     "PizzaRestaurant.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PizzaRestaurant.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

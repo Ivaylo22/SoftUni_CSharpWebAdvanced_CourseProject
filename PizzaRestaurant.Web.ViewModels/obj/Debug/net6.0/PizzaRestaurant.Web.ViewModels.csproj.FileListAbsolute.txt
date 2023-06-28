@@ -10,3 +10,6 @@ D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaResta
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.ViewModels\obj\Debug\net6.0\refint\PizzaRestaurant.Web.ViewModels.dll
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.ViewModels\obj\Debug\net6.0\PizzaRestaurant.Web.ViewModels.pdb
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.ViewModels\obj\Debug\net6.0\ref\PizzaRestaurant.Web.ViewModels.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.ViewModels\bin\Debug\net6.0\PizzaRestaurant.Common.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.ViewModels\bin\Debug\net6.0\PizzaRestaurant.Common.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.ViewModels\obj\Debug\net6.0\PizzaRestaurant.Web.ViewModels.csproj.CopyComplete

@@ -982,6 +982,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.UI": "6.0.15",
           "PizzaRestaurant.Common": "1.0.0"
         },
         "compile": {
@@ -2525,6 +2526,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.15",
       "PizzaRestaurant.Common >= 1.0.0",
       "PizzaRestaurant.Data >= 1.0.0",
+      "PizzaRestaurant.Data.Models >= 1.0.0",
       "PizzaRestaurant.Web.ViewModels >= 1.0.0"
     ]
   },
@@ -2564,6 +2566,9 @@
           "projectReferences": {
             "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Common\\PizzaRestaurant.Common.csproj": {
               "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Common\\PizzaRestaurant.Common.csproj"
+            },
+            "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data.Models\\PizzaRestaurant.Data.Models.csproj": {
+              "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data.Models\\PizzaRestaurant.Data.Models.csproj"
             },
             "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj": {
               "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj"

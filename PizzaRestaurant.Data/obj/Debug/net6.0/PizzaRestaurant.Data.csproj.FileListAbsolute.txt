@@ -12,3 +12,8 @@ D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaResta
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.pdb
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.genruntimeconfig.cache
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\ref\PizzaRestaurant.Data.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\bin\Debug\net6.0\PizzaRestaurant.Common.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\bin\Debug\net6.0\PizzaRestaurant.Data.Models.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\bin\Debug\net6.0\PizzaRestaurant.Common.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\bin\Debug\net6.0\PizzaRestaurant.Data.Models.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Data\obj\Debug\net6.0\PizzaRestaurant.Data.csproj.CopyComplete

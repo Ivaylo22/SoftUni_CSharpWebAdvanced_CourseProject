@@ -15,6 +15,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.15",
           "PizzaRestaurant.Common": "1.0.0",
           "PizzaRestaurant.Data": "1.0.0",
+          "PizzaRestaurant.Data.Models": "1.0.0",
           "PizzaRestaurant.Web.ViewModels": "1.0.0"
         },
         "runtime": {
@@ -554,13 +555,27 @@
       "PizzaRestaurant.Data/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15",
+          "PizzaRestaurant.Common": "1.0.0",
+          "PizzaRestaurant.Data.Models": "1.0.0"
         },
         "runtime": {
           "PizzaRestaurant.Data.dll": {}
         }
       },
+      "PizzaRestaurant.Data.Models/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.UI": "6.0.15",
+          "PizzaRestaurant.Common": "1.0.0"
+        },
+        "runtime": {
+          "PizzaRestaurant.Data.Models.dll": {}
+        }
+      },
       "PizzaRestaurant.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "PizzaRestaurant.Common": "1.0.0"
+        },
         "runtime": {
           "PizzaRestaurant.Web.ViewModels.dll": {}
         }
@@ -943,6 +958,11 @@
       "sha512": ""
     },
     "PizzaRestaurant.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PizzaRestaurant.Data.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
