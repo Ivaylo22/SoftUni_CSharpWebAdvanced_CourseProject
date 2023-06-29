@@ -10,7 +10,7 @@ namespace PizzaRestaurant.Data.Models
     {
         public Pizza()
         {
-            this.Products = new HashSet<Product>();
+            this.PizzaProducts = new HashSet<PizzaProduct>();
             this.Toppings = new HashSet<Topping>();
             this.Carts = new HashSet<Cart>();
         }
@@ -40,8 +40,7 @@ namespace PizzaRestaurant.Data.Models
 
         public Dough Dough { get; set; } = null!;
 
-        [Required]
-        public ICollection<Product> Products { get; set; } = null!;
+        public ICollection<PizzaProduct> PizzaProducts { get; set; }
 
         public ICollection<Topping>? Toppings { get; set; }
 

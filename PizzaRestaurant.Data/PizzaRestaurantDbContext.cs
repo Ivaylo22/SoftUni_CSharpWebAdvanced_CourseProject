@@ -29,6 +29,7 @@ namespace PizzaRestaurant.Data
 
         public DbSet<Topping> Toppings { get; set; } = null!;
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             EntityConfigurationHelper.ApplyEntityConfigurations(modelBuilder);

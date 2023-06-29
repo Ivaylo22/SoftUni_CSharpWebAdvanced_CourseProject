@@ -9,7 +9,7 @@
     {
         public Product()
         {
-            this.Pizzas=new HashSet<Pizza>();
+            this.PizzaProducts = new HashSet<PizzaProduct>();
         }
 
         [Key]
@@ -19,6 +19,6 @@
         [MaxLength(NameMaxLength)]
         public string Name { get; set; } = null!;
 
-        public virtual ICollection<Pizza> Pizzas { get; set; }
+        public ICollection<PizzaProduct> PizzaProducts { get; set; }
     }
 }
