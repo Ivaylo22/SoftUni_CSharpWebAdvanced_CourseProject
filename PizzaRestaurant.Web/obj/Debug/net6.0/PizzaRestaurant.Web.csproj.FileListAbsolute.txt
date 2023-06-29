@@ -83,3 +83,7 @@ D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaResta
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Web.ViewModels.pdb
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Data.Models.dll
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Data.Models.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Services.Data.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Services.Data.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.pdb

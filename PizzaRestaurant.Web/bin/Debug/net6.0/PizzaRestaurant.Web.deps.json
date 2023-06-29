@@ -16,6 +16,8 @@
           "PizzaRestaurant.Common": "1.0.0",
           "PizzaRestaurant.Data": "1.0.0",
           "PizzaRestaurant.Data.Models": "1.0.0",
+          "PizzaRestaurant.Services.Data": "1.0.0",
+          "PizzaRestaurant.Web.Infrastructures": "1.0.0",
           "PizzaRestaurant.Web.ViewModels": "1.0.0"
         },
         "runtime": {
@@ -572,6 +574,25 @@
           "PizzaRestaurant.Data.Models.dll": {}
         }
       },
+      "PizzaRestaurant.Services.Data/1.0.0": {
+        "dependencies": {
+          "PizzaRestaurant.Common": "1.0.0",
+          "PizzaRestaurant.Data": "1.0.0",
+          "PizzaRestaurant.Data.Models": "1.0.0",
+          "PizzaRestaurant.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "PizzaRestaurant.Services.Data.dll": {}
+        }
+      },
+      "PizzaRestaurant.Web.Infrastructures/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "PizzaRestaurant.Web.Infrastructures.dll": {}
+        }
+      },
       "PizzaRestaurant.Web.ViewModels/1.0.0": {
         "dependencies": {
           "PizzaRestaurant.Common": "1.0.0"
@@ -963,6 +984,16 @@
       "sha512": ""
     },
     "PizzaRestaurant.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PizzaRestaurant.Services.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PizzaRestaurant.Web.Infrastructures/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

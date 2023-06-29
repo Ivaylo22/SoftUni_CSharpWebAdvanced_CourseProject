@@ -1,8 +1,11 @@
-using Microsoft.AspNetCore.Identity;
+
 using Microsoft.EntityFrameworkCore;
 
+using PizzaRestaurant.Web;
 using PizzaRestaurant.Data;
 using PizzaRestaurant.Data.Models;
+using HouseRentingSystem.Web.Infrastructure.Extensions;
+using PizzaRestaurant.Services.Data.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +28,8 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 })
 
     .AddEntityFrameworkStores<PizzaRestaurantDbContext>();
+
+builder.Services.AddApplicationServices(typeof(IPizzaService));
 
 builder.Services.AddControllersWithViews();
 

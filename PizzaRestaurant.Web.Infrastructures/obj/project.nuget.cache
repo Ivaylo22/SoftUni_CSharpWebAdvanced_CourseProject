@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z43F/dnms5+XA9gmm8jvq5KoJO5E4VSrhB+Z1kUFrJHyhMBIwywKmXTKFoOOR8w+FNYdC9HixuoVWZAhiR1qwA==",
+  "success": true,
+  "projectFilePath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web.Infrastructures\\PizzaRestaurant.Web.Infrastructures.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ivail\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

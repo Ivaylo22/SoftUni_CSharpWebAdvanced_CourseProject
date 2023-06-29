@@ -1,0 +1,12 @@
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\bin\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.deps.json
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\bin\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\bin\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.csproj.AssemblyReference.cache
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.AssemblyInfoInputs.cache
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.AssemblyInfo.cs
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.csproj.CoreCompileInputs.cache
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\refint\PizzaRestaurant.Web.Infrastructures.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\ref\PizzaRestaurant.Web.Infrastructures.dll

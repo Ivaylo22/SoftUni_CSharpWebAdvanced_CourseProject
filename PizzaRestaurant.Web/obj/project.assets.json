@@ -992,6 +992,35 @@
           "bin/placeholder/PizzaRestaurant.Data.Models.dll": {}
         }
       },
+      "PizzaRestaurant.Services.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "PizzaRestaurant.Common": "1.0.0",
+          "PizzaRestaurant.Data": "1.0.0",
+          "PizzaRestaurant.Data.Models": "1.0.0",
+          "PizzaRestaurant.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PizzaRestaurant.Services.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PizzaRestaurant.Services.Data.dll": {}
+        }
+      },
+      "PizzaRestaurant.Web.Infrastructures/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PizzaRestaurant.Web.Infrastructures.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PizzaRestaurant.Web.Infrastructures.dll": {}
+        }
+      },
       "PizzaRestaurant.Web.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2511,6 +2540,16 @@
       "path": "../PizzaRestaurant.Data.Models/PizzaRestaurant.Data.Models.csproj",
       "msbuildProject": "../PizzaRestaurant.Data.Models/PizzaRestaurant.Data.Models.csproj"
     },
+    "PizzaRestaurant.Services.Data/1.0.0": {
+      "type": "project",
+      "path": "../PizzaRestaurant.Services.Data/PizzaRestaurant.Services.Data.csproj",
+      "msbuildProject": "../PizzaRestaurant.Services.Data/PizzaRestaurant.Services.Data.csproj"
+    },
+    "PizzaRestaurant.Web.Infrastructures/1.0.0": {
+      "type": "project",
+      "path": "../PizzaRestaurant.Web.Infrastructures/PizzaRestaurant.Web.Infrastructures.csproj",
+      "msbuildProject": "../PizzaRestaurant.Web.Infrastructures/PizzaRestaurant.Web.Infrastructures.csproj"
+    },
     "PizzaRestaurant.Web.ViewModels/1.0.0": {
       "type": "project",
       "path": "../PizzaRestaurant.Web.ViewModels/PizzaRestaurant.Web.ViewModels.csproj",
@@ -2527,6 +2566,8 @@
       "PizzaRestaurant.Common >= 1.0.0",
       "PizzaRestaurant.Data >= 1.0.0",
       "PizzaRestaurant.Data.Models >= 1.0.0",
+      "PizzaRestaurant.Services.Data >= 1.0.0",
+      "PizzaRestaurant.Web.Infrastructures >= 1.0.0",
       "PizzaRestaurant.Web.ViewModels >= 1.0.0"
     ]
   },
@@ -2572,6 +2613,12 @@
             },
             "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj": {
               "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj"
+            },
+            "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data\\PizzaRestaurant.Services.Data.csproj": {
+              "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data\\PizzaRestaurant.Services.Data.csproj"
+            },
+            "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web.Infrastructures\\PizzaRestaurant.Web.Infrastructures.csproj": {
+              "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web.Infrastructures\\PizzaRestaurant.Web.Infrastructures.csproj"
             },
             "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web.ViewModels\\PizzaRestaurant.Web.ViewModels.csproj": {
               "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web.ViewModels\\PizzaRestaurant.Web.ViewModels.csproj"

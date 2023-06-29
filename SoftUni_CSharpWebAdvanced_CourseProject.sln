@@ -11,11 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{0736B965-674
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B9E0A79C-45FE-42D3-B553-9B3137561D56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaRestaurant.Data", "PizzaRestaurant.Data\PizzaRestaurant.Data.csproj", "{72D20FE4-207B-43F8-9604-E6E93D959F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaRestaurant.Data", "PizzaRestaurant.Data\PizzaRestaurant.Data.csproj", "{72D20FE4-207B-43F8-9604-E6E93D959F64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaRestaurant.Data.Models", "PizzaRestaurant.Data.Models\PizzaRestaurant.Data.Models.csproj", "{4BADBDA7-8B2B-4E70-B278-48F3889D40B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaRestaurant.Data.Models", "PizzaRestaurant.Data.Models\PizzaRestaurant.Data.Models.csproj", "{4BADBDA7-8B2B-4E70-B278-48F3889D40B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaRestaurant.Web.ViewModels", "PizzaRestaurant.Web.ViewModels\PizzaRestaurant.Web.ViewModels.csproj", "{C3B36541-0119-42B5-A94E-3FFE26A8C520}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaRestaurant.Web.ViewModels", "PizzaRestaurant.Web.ViewModels\PizzaRestaurant.Web.ViewModels.csproj", "{C3B36541-0119-42B5-A94E-3FFE26A8C520}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4B7021F2-3700-4FAA-8005-287A2CED3FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaRestaurant.Services.Data", "PizzaRestaurant.Services.Data\PizzaRestaurant.Services.Data.csproj", "{8D0B6CD8-E746-42CA-9564-21B10D7A8A82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaRestaurant.Web.Infrastructures", "PizzaRestaurant.Web.Infrastructures\PizzaRestaurant.Web.Infrastructures.csproj", "{C49FB943-6272-4A44-B4A2-32A7CF303F80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +49,14 @@ Global
 		{C3B36541-0119-42B5-A94E-3FFE26A8C520}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3B36541-0119-42B5-A94E-3FFE26A8C520}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3B36541-0119-42B5-A94E-3FFE26A8C520}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0B6CD8-E746-42CA-9564-21B10D7A8A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0B6CD8-E746-42CA-9564-21B10D7A8A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0B6CD8-E746-42CA-9564-21B10D7A8A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0B6CD8-E746-42CA-9564-21B10D7A8A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C49FB943-6272-4A44-B4A2-32A7CF303F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C49FB943-6272-4A44-B4A2-32A7CF303F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C49FB943-6272-4A44-B4A2-32A7CF303F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C49FB943-6272-4A44-B4A2-32A7CF303F80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +66,8 @@ Global
 		{72D20FE4-207B-43F8-9604-E6E93D959F64} = {B9E0A79C-45FE-42D3-B553-9B3137561D56}
 		{4BADBDA7-8B2B-4E70-B278-48F3889D40B8} = {B9E0A79C-45FE-42D3-B553-9B3137561D56}
 		{C3B36541-0119-42B5-A94E-3FFE26A8C520} = {0736B965-674B-4951-9145-09D36D7FE79C}
+		{8D0B6CD8-E746-42CA-9564-21B10D7A8A82} = {4B7021F2-3700-4FAA-8005-287A2CED3FCB}
+		{C49FB943-6272-4A44-B4A2-32A7CF303F80} = {0736B965-674B-4951-9145-09D36D7FE79C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B8EDF24-ACBC-4969-980C-99414486E385}
