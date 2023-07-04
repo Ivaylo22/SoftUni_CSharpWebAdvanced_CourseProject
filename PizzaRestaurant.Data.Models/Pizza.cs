@@ -1,5 +1,4 @@
-﻿
-namespace PizzaRestaurant.Data.Models
+﻿namespace PizzaRestaurant.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
