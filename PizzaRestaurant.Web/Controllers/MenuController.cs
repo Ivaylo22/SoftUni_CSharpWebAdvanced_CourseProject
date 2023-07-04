@@ -47,5 +47,37 @@
 
             return RedirectToAction(nameof(All));
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                DeleteMenuViewModel menuModel =
+                    await this.menuService.GetMenuForDeleteAsync(id);
+
+                return View(menuModel);
+            }
+            catch (Exception)
+            {
+                this.TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                return this.RedirectToAction("All", "Menu");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id, DeleteMenuViewModel menuModel)
+        {
+            try
+            {
+                await this.menuService.DeleteByIdAsync(id);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(string.Empty, "Unexpected error occurred while deleting your post!");
+                return this.View(menuModel);
+            }
+
+            return RedirectToAction("All", "Menu");
+        }
     }
 }

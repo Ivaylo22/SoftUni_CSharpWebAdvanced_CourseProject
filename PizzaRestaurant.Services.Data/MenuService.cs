@@ -1,6 +1,7 @@
 ﻿namespace PizzaRestaurant.Services.Data
 {
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Hosting;
     using PizzaRestaurant.Data;
     using PizzaRestaurant.Data.Models;
     using PizzaRestaurant.Services.Data.Interfaces;
@@ -29,6 +30,16 @@
             await dbContext.SaveChangesAsync();
         }
 
+        public async Task DeleteByIdAsync(int id)
+        {
+            Menu menuToDelete = await this.dbContext
+                .Menus
+                .FirstAsync(m => m.Id == id);
+
+            this.dbContext.Menus.Remove(menuToDelete);
+            await this.dbContext.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<MenuViewModel>> GetAllMenusAsync()
         {
             var menus = await dbContext
@@ -42,6 +53,19 @@
                 .ToListAsync ();
 
             return menus;
+        }
+
+        public async Task<DeleteMenuViewModel> GetMenuForDeleteAsync(int id)
+        {
+            Menu menuToDelete = await dbContext
+                .Menus
+                .FirstAsync (m => m.Id == id);
+
+            return new DeleteMenuViewModel()
+            {
+                Name = menuToDelete.Name,
+                Description = menuToDelete.Description
+            };
         }
     }
 }

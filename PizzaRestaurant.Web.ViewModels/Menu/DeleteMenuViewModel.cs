@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PizzaRestaurant.Web.ViewModels.Menu
+﻿namespace PizzaRestaurant.Web.ViewModels.Menu
 {
-    internal class DeleteMenuViewModel
+    using System.ComponentModel.DataAnnotations;
+
+    using static PizzaRestaurant.Common.EntityValidationsConstants.Menu;
+
+    public class DeleteMenuViewModel
     {
+        [Required]
+        public string Name { get; set; } = null!;
+
+        [Required]
+        public string Description { get; set; } = null!;
     }
 }
