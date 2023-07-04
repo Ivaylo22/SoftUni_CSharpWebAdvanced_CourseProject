@@ -4,6 +4,7 @@
 
     public interface IMenuService
     {
+        Task AddMenuAsync(AddMenuViewModel model);
         Task<IEnumerable<MenuViewModel>> GetAllMenusAsync();
 
     }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PizzaRestaurant.Services.Data.Interfaces;
+using PizzaRestaurant.Web.ViewModels.Menu;
 
 namespace PizzaRestaurant.Web.Controllers
 {
@@ -17,11 +18,32 @@ namespace PizzaRestaurant.Web.Controllers
             return View();
         }
 
-        public async IActionResult All()
+        [HttpGet]
+        public async Task<IActionResult> All()
         {
-            var model = await menuService.GetAllMenusAsync();
+            IEnumerable<MenuViewModel> model = await menuService.GetAllMenusAsync();
 
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(AddMenuViewModel model)
+        {
+
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            await menuService.AddMenuAsync(model);
+
+            return RedirectToAction(nameof(All));
         }
     }
 }

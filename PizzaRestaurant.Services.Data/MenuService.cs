@@ -2,6 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using PizzaRestaurant.Data;
+    using PizzaRestaurant.Data.Models;
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Menu;
     using System.Collections.Generic;
@@ -14,6 +15,18 @@
         public MenuService(PizzaRestaurantDbContext _dbContext)
         {
             this.dbContext = _dbContext;
+        }
+
+        public async Task AddMenuAsync(AddMenuViewModel model)
+        {
+            Menu newMenu = new Menu()
+            {
+                Name = model.Name,
+                Description = model.Description
+            };
+
+            await dbContext.Menus.AddAsync(newMenu);
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<MenuViewModel>> GetAllMenusAsync()
