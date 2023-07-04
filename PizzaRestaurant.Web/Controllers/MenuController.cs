@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PizzaRestaurant.Services.Data.Interfaces;
-using PizzaRestaurant.Web.ViewModels.Menu;
-
-namespace PizzaRestaurant.Web.Controllers
+﻿namespace PizzaRestaurant.Web.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using PizzaRestaurant.Services.Data.Interfaces;
+    using PizzaRestaurant.Web.ViewModels.Menu;
+    using System.Collections.Specialized;
+    using static PizzaRestaurant.Common.NotificationMessagesConstants;
     public class MenuController : BaseController
     {
         private readonly IMenuService menuService;
@@ -27,7 +28,7 @@ namespace PizzaRestaurant.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Add()
+        public IActionResult Add()
         {
             return View();
         }
@@ -38,6 +39,7 @@ namespace PizzaRestaurant.Web.Controllers
 
             if(!ModelState.IsValid)
             {
+                //this.TempData[ErrorMessage] = "You must become an agent in order to add new houses!";
                 return View(model);
             }
 
