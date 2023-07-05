@@ -1,9 +1,10 @@
 ﻿namespace PizzaRestaurant.Web.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Menu;
-    using System.Collections.Specialized;
+
     using static PizzaRestaurant.Common.NotificationMessagesConstants;
     public class MenuController : BaseController
     {
@@ -11,7 +12,7 @@
 
         public MenuController(IMenuService _menuService)
         {
-            this.menuService = _menuService;
+            menuService = _menuService;
         }
 
         public IActionResult Index()
@@ -48,19 +49,20 @@
             return RedirectToAction(nameof(All));
         }
 
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             try
             {
                 DeleteMenuViewModel menuModel =
-                    await this.menuService.GetMenuForDeleteAsync(id);
+                    await menuService.GetMenuForDeleteAsync(id);
 
                 return View(menuModel);
             }
             catch (Exception)
             {
-                this.TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
-                return this.RedirectToAction("All", "Menu");
+                TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                return RedirectToAction("All", "Menu");
             }
         }
 
@@ -69,15 +71,26 @@
         {
             try
             {
-                await this.menuService.DeleteByIdAsync(id);
+                await menuService.DeleteByIdAsync(id);
             }
             catch (Exception)
             {
-                ModelState.AddModelError(string.Empty, "Unexpected error occurred while deleting your post!");
-                return this.View(menuModel);
+                TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                return View(menuModel);
             }
 
             return RedirectToAction("All", "Menu");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            EditMenuViewModel model = new EditMenuViewModel()
+            {
+                MenuPizzas = await menuService.GetAllPizzasAsync(id)
+            };
+
+            return View(model);
         }
     }
 }

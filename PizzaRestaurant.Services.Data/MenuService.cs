@@ -6,8 +6,10 @@
     using PizzaRestaurant.Data.Models;
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Menu;
+    using PizzaRestaurant.Web.ViewModels.Pizza;
     using System.Collections.Generic;
     using System.Threading.Tasks;
+    using Web.ViewModels.Products;
 
     public class MenuService : IMenuService
     {
@@ -53,6 +55,28 @@
                 .ToListAsync ();
 
             return menus;
+        }
+
+        public async Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasAsync(int id)
+        {
+            return await dbContext
+                    .Pizzas
+                    .Where(p => p.Id == id)
+                    .Select(p => new PizzasForMenuViewModel
+                    {
+                        Name = p.Name,
+                        InitialPrice = p.InitialPrice,
+                        ImageUrl = p.ImageUrl,
+                        Description = p.Description,
+                        DoughName = p.Dough.Name,
+                        Products = p.PizzaProducts
+                            .Select(pp => new ProductsForPizzaViewModel
+                            {
+                                Name = pp.Product.Name
+                            })
+                            .ToArray()
+                    })
+                    .ToArrayAsync();
         }
 
         public async Task<DeleteMenuViewModel> GetMenuForDeleteAsync(int id)

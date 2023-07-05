@@ -34,7 +34,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("PizzasId");
 
-                    b.ToTable("CartPizza");
+                    b.ToTable("CartPizza", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
@@ -251,7 +251,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Carts");
+                    b.ToTable("Carts", (string)null);
                 });
 
             modelBuilder.Entity("PizzaRestaurant.Data.Models.Dough", b =>
@@ -269,7 +269,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doughs");
+                    b.ToTable("Doughs", (string)null);
 
                     b.HasData(
                         new
@@ -309,7 +309,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Menus");
+                    b.ToTable("Menus", (string)null);
                 });
 
             modelBuilder.Entity("PizzaRestaurant.Data.Models.Order", b =>
@@ -335,7 +335,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("PizzaRestaurant.Data.Models.Pizza", b =>
@@ -376,7 +376,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("MenuId");
 
-                    b.ToTable("Pizzas");
+                    b.ToTable("Pizzas", (string)null);
 
                     b.HasData(
                         new
@@ -411,7 +411,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("PizzaProduct");
+                    b.ToTable("PizzaProduct", (string)null);
 
                     b.HasData(
                         new
@@ -461,7 +461,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.ToTable("Product", (string)null);
 
                     b.HasData(
                         new
@@ -509,7 +509,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Toppings");
+                    b.ToTable("Toppings", (string)null);
 
                     b.HasData(
                         new
@@ -550,7 +550,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("ToppingsId");
 
-                    b.ToTable("PizzaTopping");
+                    b.ToTable("PizzaTopping", (string)null);
                 });
 
             modelBuilder.Entity("CartPizza", b =>
