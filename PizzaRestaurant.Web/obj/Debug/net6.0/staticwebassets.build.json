@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oVM8QII7cl3oY5V27/8Mk068E8MFwwxxfqNCfLAoUXk=",
+  "Hash": "ALKdco/vGLFtM9w739g1S3gBeOatybgrq3MOmbctoLQ=",
   "Source": "PizzaRestaurant.Web",
   "BasePath": "_content/PizzaRestaurant.Web",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web\\wwwroot\\js\\jquery-override.js",
+      "SourceId": "PizzaRestaurant.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web\\wwwroot\\",
+      "BasePath": "_content/PizzaRestaurant.Web",
+      "RelativePath": "js/jquery-override.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery-override.js"
     },
     {
       "Identity": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web\\wwwroot\\js\\site.js",

@@ -87,3 +87,13 @@ D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaResta
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.dll
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Services.Data.pdb
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

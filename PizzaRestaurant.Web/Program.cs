@@ -6,6 +6,7 @@ using PizzaRestaurant.Data;
 using PizzaRestaurant.Data.Models;
 using HouseRentingSystem.Web.Infrastructure.Extensions;
 using PizzaRestaurant.Services.Data.Interfaces;
+using PizzaRestaurant.Web.Infrastructures.ModelBinders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,7 +32,12 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 
 builder.Services.AddApplicationServices(typeof(IPizzaService));
 
-builder.Services.AddControllersWithViews();
+builder.Services
+    .AddControllersWithViews()
+    .AddMvcOptions(options =>
+    {
+        options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+    });
 
 var app = builder.Build();
 

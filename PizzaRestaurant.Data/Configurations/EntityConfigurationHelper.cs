@@ -13,7 +13,9 @@ namespace PizzaRestaurant.Data.Configurations
 
             foreach (var configurationType in configurationTypes)
             {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 dynamic configuration = Activator.CreateInstance(configurationType);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
                 modelBuilder.ApplyConfiguration(configuration);
             }
         }
