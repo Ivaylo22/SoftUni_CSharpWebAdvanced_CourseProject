@@ -1,4 +1,4 @@
-﻿@model EditMenuViewModel;
+﻿@model EditMenuViewModel
 
 @{
     ViewBag.Title = "Edit Menu";
@@ -20,6 +20,16 @@
                     <input asp-for="Description" class="form-control">
                 </div>
             </div>
+
+            //TODO ADD IMAGE AND DESCRIPTION
+            @foreach (var pizza in Model.MenuPizzas)
+            {
+                <div class="mb-2">
+                    <span>@pizza.Name</span>
+                    <a asp-controller="Menu" asp-action="RemovePizzaFromMenu" asp-route-menuId="@Model.Id" asp-route-pizzaId="@pizza.Id" class="btn btn-danger btn-sm">Remove</a>
+                </div>
+            }
+            //TODO ADD BUTTON TO ADD PIZZA
             <div class="row m-0">
                 <div class="col-md-6">
                     <a asp-controller="Menu" asp-action="All" class="btn btn-primary w-100">Back</a>

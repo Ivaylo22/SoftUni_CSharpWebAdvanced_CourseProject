@@ -9,7 +9,10 @@
         public EditMenuViewModel()
         {
             this.MenuPizzas = new HashSet<PizzasForMenuViewModel>();
+            this.SelectedPizzas = new List<int>();
         }
+
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(NameMaxLength)]
@@ -22,5 +25,7 @@
         public string Description { get; set; } = null!;
 
         public IEnumerable<PizzasForMenuViewModel>? MenuPizzas { get; set; }
+
+        public List<int> SelectedPizzas { get; set; }
     }
 }

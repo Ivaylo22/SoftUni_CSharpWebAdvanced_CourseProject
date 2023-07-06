@@ -1,15 +1,15 @@
 ﻿namespace PizzaRestaurant.Services.Data
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Web.ViewModels.Products;
     using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Hosting;
+
     using PizzaRestaurant.Data;
     using PizzaRestaurant.Data.Models;
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Menu;
     using PizzaRestaurant.Web.ViewModels.Pizza;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
-    using Web.ViewModels.Products;
 
     public class MenuService : IMenuService
     {
@@ -44,17 +44,26 @@
 
         public async Task EditMenuByIdAndEditModelAsync(int id, EditMenuViewModel editModel)
         {
-            //IEnumerable<Pizza> allPizzas = await dbContext
-            //    .Pizzas
-            //    .Where(p => p.)
+            Menu menu = await dbContext
+                .Menus
+                .FirstAsync(m => m.Id == id);
 
-            //Menu menu = await dbContext
-            //    .Menus
-            //    .FirstAsync(m => m.Id == id);
+            menu.Name = editModel.Name;
+            menu.Description = editModel.Description;
 
-            //menu.Name = editModel.Name;
-            //menu.Description = editModel.Description;
-            //menu.Pizzas = editModel.MenuPizzas
+            if (editModel.SelectedPizzas != null && editModel.SelectedPizzas.Any())
+            {
+                List<MenuPizza> removedMenuPizzas = menu.MenusPizzas
+                    .Where(mp => editModel.SelectedPizzas.Contains(mp.PizzaId))
+                    .ToList();
+
+                foreach (var menuPizza in removedMenuPizzas)
+                {
+                    menu.MenusPizzas.Remove(menuPizza);
+                }
+            }
+
+            await this.dbContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<MenuViewModel>> GetAllMenusAsync()
@@ -76,9 +85,10 @@
         {
             return await dbContext
                     .Pizzas
-                    .Where(p => p.Id == id)
+                    .Where(p => p.MenusPizzas.Any(mp=> mp.MenuId == id))
                     .Select(p => new PizzasForMenuViewModel
                     {
+                        Id = p.Id,
                         Name = p.Name,
                         InitialPrice = p.InitialPrice,
                         ImageUrl = p.ImageUrl,
@@ -115,10 +125,35 @@
 
             return new EditMenuViewModel()
             {
+                Id = menuToEdit.Id,
                 Name = menuToEdit.Name,
                 Description = menuToEdit.Description,
                 MenuPizzas = await GetAllPizzasAsync(id)
             };
+        }
+
+        public async Task<bool> RemovePizzaFromMenuAsync(int menuId, int pizzaId)
+        {
+            var menu = await dbContext.Menus
+                .Include(m => m.MenusPizzas)
+                .FirstOrDefaultAsync(m => m.Id == menuId);
+
+            if (menu == null)
+            {
+                return false;
+            }
+
+            var menuPizza = menu.MenusPizzas
+                .FirstOrDefault(mp => mp.PizzaId == pizzaId);
+
+            if (menuPizza != null)
+            {
+                menu.MenusPizzas.Remove(menuPizza);
+                await dbContext.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
         }
     }
 }

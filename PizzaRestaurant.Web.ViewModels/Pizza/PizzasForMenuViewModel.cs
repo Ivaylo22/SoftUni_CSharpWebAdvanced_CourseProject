@@ -8,6 +8,7 @@ namespace PizzaRestaurant.Web.ViewModels.Pizza
         {
             this.Products = new HashSet<ProductsForPizzaViewModel>();
         }
+        public int Id { get; set; }
 
         public string Name { get; set; } = null!;
 
