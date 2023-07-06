@@ -6,7 +6,6 @@ namespace PizzaRestaurant.Data
     using Microsoft.EntityFrameworkCore;
     using PizzaRestaurant.Data.Configurations;
     using PizzaRestaurant.Data.Models;
-    using System.Reflection.Emit;
 
     public class PizzaRestaurantDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {

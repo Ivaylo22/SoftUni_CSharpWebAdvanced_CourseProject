@@ -34,7 +34,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("PizzasId");
 
-                    b.ToTable("CartPizza", (string)null);
+                    b.ToTable("CartPizza");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
@@ -251,7 +251,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Carts", (string)null);
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("PizzaRestaurant.Data.Models.Dough", b =>
@@ -269,7 +269,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doughs", (string)null);
+                    b.ToTable("Doughs");
 
                     b.HasData(
                         new
@@ -309,7 +309,42 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Menus", (string)null);
+                    b.ToTable("Menus");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Gotino menu",
+                            Name = "Breakfast menu"
+                        });
+                });
+
+            modelBuilder.Entity("PizzaRestaurant.Data.Models.MenuPizza", b =>
+                {
+                    b.Property<int>("PizzaId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MenuId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PizzaId", "MenuId");
+
+                    b.HasIndex("MenuId");
+
+                    b.ToTable("MenuPizza");
+
+                    b.HasData(
+                        new
+                        {
+                            PizzaId = 1,
+                            MenuId = 1
+                        },
+                        new
+                        {
+                            PizzaId = 2,
+                            MenuId = 1
+                        });
                 });
 
             modelBuilder.Entity("PizzaRestaurant.Data.Models.Order", b =>
@@ -335,7 +370,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("PizzaRestaurant.Data.Models.Pizza", b =>
@@ -362,9 +397,6 @@ namespace PizzaRestaurant.Data.Migrations
                     b.Property<decimal>("InitialPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("MenuId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(30)
@@ -374,9 +406,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("DoughId");
 
-                    b.HasIndex("MenuId");
-
-                    b.ToTable("Pizzas", (string)null);
+                    b.ToTable("Pizzas");
 
                     b.HasData(
                         new
@@ -401,7 +431,7 @@ namespace PizzaRestaurant.Data.Migrations
 
             modelBuilder.Entity("PizzaRestaurant.Data.Models.PizzaProduct", b =>
                 {
-                    b.Property<int>("PizzaId")
+                    b.Property<int?>("PizzaId")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
@@ -411,7 +441,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("PizzaProduct", (string)null);
+                    b.ToTable("PizzaProduct");
 
                     b.HasData(
                         new
@@ -461,7 +491,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product", (string)null);
+                    b.ToTable("Product");
 
                     b.HasData(
                         new
@@ -509,7 +539,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Toppings", (string)null);
+                    b.ToTable("Toppings");
 
                     b.HasData(
                         new
@@ -550,7 +580,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("ToppingsId");
 
-                    b.ToTable("PizzaTopping", (string)null);
+                    b.ToTable("PizzaTopping");
                 });
 
             modelBuilder.Entity("CartPizza", b =>
@@ -619,6 +649,25 @@ namespace PizzaRestaurant.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PizzaRestaurant.Data.Models.MenuPizza", b =>
+                {
+                    b.HasOne("PizzaRestaurant.Data.Models.Menu", "Menu")
+                        .WithMany("MenusPizzas")
+                        .HasForeignKey("MenuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PizzaRestaurant.Data.Models.Pizza", "Pizza")
+                        .WithMany("MenusPizzas")
+                        .HasForeignKey("PizzaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Menu");
+
+                    b.Navigation("Pizza");
+                });
+
             modelBuilder.Entity("PizzaRestaurant.Data.Models.Order", b =>
                 {
                     b.HasOne("PizzaRestaurant.Data.Models.Cart", "Cart")
@@ -645,10 +694,6 @@ namespace PizzaRestaurant.Data.Migrations
                         .HasForeignKey("DoughId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("PizzaRestaurant.Data.Models.Menu", null)
-                        .WithMany("Pizzas")
-                        .HasForeignKey("MenuId");
 
                     b.Navigation("Dough");
                 });
@@ -699,11 +744,13 @@ namespace PizzaRestaurant.Data.Migrations
 
             modelBuilder.Entity("PizzaRestaurant.Data.Models.Menu", b =>
                 {
-                    b.Navigation("Pizzas");
+                    b.Navigation("MenusPizzas");
                 });
 
             modelBuilder.Entity("PizzaRestaurant.Data.Models.Pizza", b =>
                 {
+                    b.Navigation("MenusPizzas");
+
                     b.Navigation("PizzaProducts");
                 });
 

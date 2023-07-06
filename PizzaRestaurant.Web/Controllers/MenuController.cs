@@ -40,7 +40,6 @@
 
             if(!ModelState.IsValid)
             {
-                //this.TempData[ErrorMessage] = "You must become an agent in order to add new houses!";
                 return View(model);
             }
 
@@ -85,12 +84,25 @@
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            EditMenuViewModel model = new EditMenuViewModel()
-            {
-                MenuPizzas = await menuService.GetAllPizzasAsync(id)
-            };
+            EditMenuViewModel model = await menuService.GetMenuForEditAsync(id);
 
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditMenuViewModel editModel)
+        {
+            try
+            {
+                await menuService.EditMenuByIdAndEditModelAsync(id, editModel);
+            }
+            catch (Exception)
+            {
+                TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                return View(editModel);
+            }
+
+            return RedirectToAction("All", "Menu");
         }
     }
 }

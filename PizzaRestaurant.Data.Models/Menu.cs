@@ -8,7 +8,7 @@
     {
         public Menu()
         {
-            this.Pizzas = new HashSet<Pizza>();
+            this.MenusPizzas = new HashSet<MenuPizza>();
         }
 
         [Key]
@@ -22,7 +22,6 @@
         [MaxLength(DescriptionMaxLength)]
         public string Description { get; set; } = null!;
 
-        [Required]
-        public IEnumerable<Pizza> Pizzas { get; set; } = null!;
+        public ICollection<MenuPizza>? MenusPizzas { get; set; }
     }
 }

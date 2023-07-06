@@ -5,8 +5,8 @@ namespace PizzaRestaurant.Data.Models
     public class PizzaProduct
     {
         [ForeignKey(nameof(Pizza))]
-        public int PizzaId { get; set; }
-        public Pizza Pizza { get; set; } = null!;
+        public int? PizzaId { get; set; }
+        public Pizza? Pizza { get; set; }
 
 
         [ForeignKey(nameof(Product))]

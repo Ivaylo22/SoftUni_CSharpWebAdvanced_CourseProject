@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PizzaRestaurant.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Initialize : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -80,8 +80,8 @@ namespace PizzaRestaurant.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -227,6 +227,7 @@ namespace PizzaRestaurant.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CartId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
@@ -257,8 +258,7 @@ namespace PizzaRestaurant.Data.Migrations
                     InitialPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: false),
-                    DoughId = table.Column<int>(type: "int", nullable: false),
-                    MenuId = table.Column<int>(type: "int", nullable: true)
+                    DoughId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -269,11 +269,6 @@ namespace PizzaRestaurant.Data.Migrations
                         principalTable: "Doughs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Pizzas_Menus_MenuId",
-                        column: x => x.MenuId,
-                        principalTable: "Menus",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -301,24 +296,48 @@ namespace PizzaRestaurant.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PizzaProduct",
+                name: "MenuPizza",
                 columns: table => new
                 {
-                    PizzasId = table.Column<int>(type: "int", nullable: false),
-                    ProductsId = table.Column<int>(type: "int", nullable: false)
+                    PizzaId = table.Column<int>(type: "int", nullable: false),
+                    MenuId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PizzaProduct", x => new { x.PizzasId, x.ProductsId });
+                    table.PrimaryKey("PK_MenuPizza", x => new { x.PizzaId, x.MenuId });
                     table.ForeignKey(
-                        name: "FK_PizzaProduct_Pizzas_PizzasId",
-                        column: x => x.PizzasId,
+                        name: "FK_MenuPizza_Menus_MenuId",
+                        column: x => x.MenuId,
+                        principalTable: "Menus",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MenuPizza_Pizzas_PizzaId",
+                        column: x => x.PizzaId,
+                        principalTable: "Pizzas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PizzaProduct",
+                columns: table => new
+                {
+                    PizzaId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PizzaProduct", x => new { x.PizzaId, x.ProductId });
+                    table.ForeignKey(
+                        name: "FK_PizzaProduct_Pizzas_PizzaId",
+                        column: x => x.PizzaId,
                         principalTable: "Pizzas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PizzaProduct_Product_ProductsId",
-                        column: x => x.ProductsId,
+                        name: "FK_PizzaProduct_Product_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -346,6 +365,76 @@ namespace PizzaRestaurant.Data.Migrations
                         principalTable: "Toppings",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Doughs",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Classic Neapolitan" },
+                    { 2, "Whole Wheat" },
+                    { 3, "Gluten-Free" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Menus",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[] { 1, "Gotino menu", "Breakfast menu" });
+
+            migrationBuilder.InsertData(
+                table: "Product",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Tomato Sauce" },
+                    { 2, "Cheese" },
+                    { 3, "Pepperoni" },
+                    { 4, "Vegetables" },
+                    { 5, "Pineapple" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Toppings",
+                columns: new[] { "Id", "Name", "Price" },
+                values: new object[,]
+                {
+                    { 1, "Cheese", 1.20m },
+                    { 2, "Mushrooms", 1.30m },
+                    { 3, "Olives", 1.00m },
+                    { 4, "Garlic", 1.50m }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Pizzas",
+                columns: new[] { "Id", "Description", "DoughId", "ImageUrl", "InitialPrice", "Name" },
+                values: new object[] { 1, "Classic pizza with tomato sauce and mozzarella cheese", 1, "https://drive.google.com/file/d/1iSiFsUSFdY_1CCIL8J6tJLzNS8k-USd0/view?usp=sharing", 10.99m, "Margherita" });
+
+            migrationBuilder.InsertData(
+                table: "Pizzas",
+                columns: new[] { "Id", "Description", "DoughId", "ImageUrl", "InitialPrice", "Name" },
+                values: new object[] { 2, "Traditional pizza topped with tomato sauce and slices of pepperoni.", 2, "https://drive.google.com/file/d/1XZNR8QzYuP_6R2jAmgGtPzkphCjIJr1E/view?usp=sharing", 12.99m, "Pepperoni" });
+
+            migrationBuilder.InsertData(
+                table: "MenuPizza",
+                columns: new[] { "MenuId", "PizzaId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 1, 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PizzaProduct",
+                columns: new[] { "PizzaId", "ProductId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 1, 2 },
+                    { 1, 3 },
+                    { 2, 3 },
+                    { 2, 4 },
+                    { 2, 5 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -393,6 +482,11 @@ namespace PizzaRestaurant.Data.Migrations
                 column: "PizzasId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MenuPizza_MenuId",
+                table: "MenuPizza",
+                column: "MenuId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Orders_CartId",
                 table: "Orders",
                 column: "CartId");
@@ -403,19 +497,14 @@ namespace PizzaRestaurant.Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PizzaProduct_ProductsId",
+                name: "IX_PizzaProduct_ProductId",
                 table: "PizzaProduct",
-                column: "ProductsId");
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pizzas_DoughId",
                 table: "Pizzas",
                 column: "DoughId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Pizzas_MenuId",
-                table: "Pizzas",
-                column: "MenuId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PizzaTopping_ToppingsId",
@@ -444,6 +533,9 @@ namespace PizzaRestaurant.Data.Migrations
                 name: "CartPizza");
 
             migrationBuilder.DropTable(
+                name: "MenuPizza");
+
+            migrationBuilder.DropTable(
                 name: "Orders");
 
             migrationBuilder.DropTable(
@@ -454,6 +546,9 @@ namespace PizzaRestaurant.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Menus");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
@@ -472,9 +567,6 @@ namespace PizzaRestaurant.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Doughs");
-
-            migrationBuilder.DropTable(
-                name: "Menus");
         }
     }
 }

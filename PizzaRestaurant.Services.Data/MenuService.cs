@@ -42,6 +42,21 @@
             await this.dbContext.SaveChangesAsync();
         }
 
+        public async Task EditMenuByIdAndEditModelAsync(int id, EditMenuViewModel editModel)
+        {
+            //IEnumerable<Pizza> allPizzas = await dbContext
+            //    .Pizzas
+            //    .Where(p => p.)
+
+            //Menu menu = await dbContext
+            //    .Menus
+            //    .FirstAsync(m => m.Id == id);
+
+            //menu.Name = editModel.Name;
+            //menu.Description = editModel.Description;
+            //menu.Pizzas = editModel.MenuPizzas
+        }
+
         public async Task<IEnumerable<MenuViewModel>> GetAllMenusAsync()
         {
             var menus = await dbContext
@@ -89,6 +104,20 @@
             {
                 Name = menuToDelete.Name,
                 Description = menuToDelete.Description
+            };
+        }
+
+        public async Task<EditMenuViewModel> GetMenuForEditAsync(int id)
+        {
+            Menu menuToEdit = await dbContext
+                .Menus
+                .FirstAsync(m => m.Id == id);
+
+            return new EditMenuViewModel()
+            {
+                Name = menuToEdit.Name,
+                Description = menuToEdit.Description,
+                MenuPizzas = await GetAllPizzasAsync(id)
             };
         }
     }
