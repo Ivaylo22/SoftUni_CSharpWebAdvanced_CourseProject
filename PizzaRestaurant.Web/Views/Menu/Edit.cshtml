@@ -21,15 +21,24 @@
                 </div>
             </div>
 
-            //TODO ADD IMAGE AND DESCRIPTION
             @foreach (var pizza in Model.MenuPizzas)
             {
                 <div class="mb-2">
-                    <span>@pizza.Name</span>
-                    <a asp-controller="Menu" asp-action="RemovePizzaFromMenu" asp-route-menuId="@Model.Id" asp-route-pizzaId="@pizza.Id" class="btn btn-danger btn-sm">Remove</a>
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <img src="@pizza.ImageUrl" alt="@pizza.Name" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>@pizza.Name</h4>
+                            <p>@pizza.Description</p>
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-center">
+                            <a asp-controller="Menu" asp-action="RemovePizzaFromMenu" asp-route-menuId="@Model.Id" asp-route-pizzaId="@pizza.Id" class="btn btn-danger btn-sm">Remove</a>
+                        </div>
+                    </div>
                 </div>
             }
-            //TODO ADD BUTTON TO ADD PIZZA
+
             <div class="row m-0">
                 <div class="col-md-6">
                     <a asp-controller="Menu" asp-action="All" class="btn btn-primary w-100">Back</a>
@@ -39,6 +48,12 @@
                 </div>
             </div>
         </form>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6 offset-md-3">
+        <a asp-controller="Menu" asp-action="AddPizzas" asp-route-menuId="@Model.Id" class="btn btn-success w-100">Add Pizzas</a>
     </div>
 </div>
 

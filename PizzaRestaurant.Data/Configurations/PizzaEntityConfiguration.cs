@@ -28,7 +28,7 @@
                 Id = 1,
                 Name = "Margherita",
                 InitialPrice = 10.99m,
-                ImageUrl = "https://drive.google.com/file/d/1iSiFsUSFdY_1CCIL8J6tJLzNS8k-USd0/view?usp=sharing",
+                ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSFF8PErjfcRq_lYAHhj2OrrqqTdY0FKohDA&usqp=CAU",
                 Description = "Classic pizza with tomato sauce and mozzarella cheese",
                 DoughId = 1
             };
@@ -40,7 +40,7 @@
                 Id = 2,
                 Name = "Pepperoni",
                 InitialPrice = 12.99m,
-                ImageUrl = "https://drive.google.com/file/d/1XZNR8QzYuP_6R2jAmgGtPzkphCjIJr1E/view?usp=sharing",
+                ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_4_lOV1P3_db6HITLwflwzROi6IZsHppD_g&usqp=CAU",
                 Description = "Traditional pizza topped with tomato sauce and slices of pepperoni.",
                 DoughId = 2
             };

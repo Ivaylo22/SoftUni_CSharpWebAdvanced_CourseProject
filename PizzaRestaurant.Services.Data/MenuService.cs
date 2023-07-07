@@ -81,7 +81,7 @@
             return menus;
         }
 
-        public async Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasAsync(int id)
+        public async Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasByMenuIdAsync(int id)
         {
             return await dbContext
                     .Pizzas
@@ -128,7 +128,7 @@
                 Id = menuToEdit.Id,
                 Name = menuToEdit.Name,
                 Description = menuToEdit.Description,
-                MenuPizzas = await GetAllPizzasAsync(id)
+                MenuPizzas = await GetAllPizzasByMenuIdAsync(id)
             };
         }
 
@@ -154,6 +154,29 @@
             }
 
             return false;
+        }
+
+        //TODO checkc if pizza is already in the menu
+        public async Task<bool> AddPizzaToMenuAsync(int menuId, int pizzaId)
+        {
+            var menu = await dbContext.Menus.FindAsync(menuId);
+            var pizza = await dbContext.Pizzas.FindAsync(pizzaId);
+
+            if (menu == null || pizza == null)
+            {
+                return false;
+            }
+
+            var menuPizza = new MenuPizza
+            {
+                MenuId = menuId,
+                PizzaId = pizzaId
+            };
+
+            await dbContext.MenusPizzas.AddAsync(menuPizza);
+            await dbContext.SaveChangesAsync();
+
+            return true;
         }
     }
 }

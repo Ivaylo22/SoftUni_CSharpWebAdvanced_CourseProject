@@ -9,10 +9,14 @@
     public class MenuController : BaseController
     {
         private readonly IMenuService menuService;
+        private readonly IPizzaService pizzaService;
 
-        public MenuController(IMenuService _menuService)
+
+        public MenuController(IMenuService _menuService, IPizzaService _pizzaService)
         {
-            menuService = _menuService;
+            this.menuService = _menuService;
+            this.pizzaService = _pizzaService;
+
         }
 
         public IActionResult Index()
@@ -121,6 +125,29 @@
             }
 
             return RedirectToAction("Edit", new { id = menuId });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AddPizzas(int menuId)
+        {
+            var model = await pizzaService.GetAllPizzasAsync(menuId);
+            ViewBag.MenuId = menuId;
+
+            return View(model);
+        }
+
+        public async Task<IActionResult> AddPizzaToMenu(int menuId, int pizzaId)
+        {
+            var success = await menuService.AddPizzaToMenuAsync(menuId, pizzaId);
+
+            if (!success)
+            {
+                TempData["ErrorMessage"] = "Pizza or menu Id are not correct";
+                return RedirectToAction("AddPizzas", new { menuId });
+            }
+
+            TempData["SuccessMessage"] = "Pizza successfully added in the menu";
+            return RedirectToAction("AddPizzas", new { menuId });
         }
     }
 }

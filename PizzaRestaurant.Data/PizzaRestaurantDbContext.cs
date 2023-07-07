@@ -28,6 +28,11 @@ namespace PizzaRestaurant.Data
 
         public DbSet<Topping> Toppings { get; set; } = null!;
 
+        public DbSet<MenuPizza> MenusPizzas { get; set; } = null!;
+
+        public DbSet<PizzaProduct> PizzasProducts { get; set; } = null!;
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

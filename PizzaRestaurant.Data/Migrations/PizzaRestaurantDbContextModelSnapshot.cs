@@ -332,7 +332,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("MenuId");
 
-                    b.ToTable("MenuPizza");
+                    b.ToTable("MenusPizzas");
 
                     b.HasData(
                         new
@@ -414,7 +414,7 @@ namespace PizzaRestaurant.Data.Migrations
                             Id = 1,
                             Description = "Classic pizza with tomato sauce and mozzarella cheese",
                             DoughId = 1,
-                            ImageUrl = "https://drive.google.com/file/d/1iSiFsUSFdY_1CCIL8J6tJLzNS8k-USd0/view?usp=sharing",
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSFF8PErjfcRq_lYAHhj2OrrqqTdY0FKohDA&usqp=CAU",
                             InitialPrice = 10.99m,
                             Name = "Margherita"
                         },
@@ -423,7 +423,7 @@ namespace PizzaRestaurant.Data.Migrations
                             Id = 2,
                             Description = "Traditional pizza topped with tomato sauce and slices of pepperoni.",
                             DoughId = 2,
-                            ImageUrl = "https://drive.google.com/file/d/1XZNR8QzYuP_6R2jAmgGtPzkphCjIJr1E/view?usp=sharing",
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_4_lOV1P3_db6HITLwflwzROi6IZsHppD_g&usqp=CAU",
                             InitialPrice = 12.99m,
                             Name = "Pepperoni"
                         });
@@ -441,7 +441,7 @@ namespace PizzaRestaurant.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("PizzaProduct");
+                    b.ToTable("PizzasProducts");
 
                     b.HasData(
                         new
