@@ -136,6 +136,7 @@
             return View(model);
         }
 
+        [HttpPost]
         public async Task<IActionResult> AddPizzaToMenu(int menuId, int pizzaId)
         {
             var success = await menuService.AddPizzaToMenuAsync(menuId, pizzaId);
@@ -148,6 +149,22 @@
 
             TempData["SuccessMessage"] = "Pizza successfully added in the menu";
             return RedirectToAction("AddPizzas", new { menuId });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Pizzas(int menuId)
+        {
+            try
+            {
+                var pizzas = await pizzaService.GetPizzasByMenuIdAsync(menuId);
+                return View(pizzas);
+            }
+            catch
+            {
+                TempData["ErrorMessage"] = "Something went wrong";
+                return RedirectToAction("All", "Menu");
+            }
+
         }
     }
 }

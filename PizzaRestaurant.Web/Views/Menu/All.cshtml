@@ -18,7 +18,7 @@
                 <h5 class="card-title mt-1 text-warning">@e.Name</h5>
                 <p class="mb-0"><span class="fw-bold">Description: </span>@e.Description</p>
             </div>
-            <a asp-controller="Menu" asp-action="Details" asp-route-id="@e.Id" class="btn btn-primary mb-2 w-100 p-3 fw-bold">View Pizzas</a>
+            <a asp-controller="Menu" asp-action="Pizzas" asp-route-menuId="@e.Id" class="btn btn-primary mb-2 w-100 p-3 fw-bold">View Pizzas</a>
             
             <div class="row">
                 <div class="col-md-6">

@@ -37,5 +37,28 @@
                     })
                     .ToArrayAsync();
         }
+
+        public async Task<IEnumerable<PizzasForMenuViewModel>> GetPizzasByMenuIdAsync(int menuId)
+        {
+            return await dbContext
+                    .Pizzas
+                    .Where(p => p.MenusPizzas.Any(mp => mp.MenuId == menuId))
+                    .Select(p => new PizzasForMenuViewModel
+                    {
+                        Id = p.Id,
+                        Name = p.Name,
+                        InitialPrice = p.InitialPrice,
+                        ImageUrl = p.ImageUrl,
+                        Description = p.Description,
+                        DoughName = p.Dough.Name,
+                        Products = p.PizzaProducts
+                            .Select(pp => new ProductsForPizzaViewModel
+                            {
+                                Name = pp.Product.Name
+                            })
+                            .ToArray()
+                    })
+                    .ToArrayAsync();
+        }
     }
 }

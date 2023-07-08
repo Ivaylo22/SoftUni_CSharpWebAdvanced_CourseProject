@@ -5,5 +5,6 @@ namespace PizzaRestaurant.Services.Data.Interfaces
     public interface IPizzaService
     {
         Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasWithDifferentMenuIdAsync(int id);
+        Task<IEnumerable<PizzasForMenuViewModel>> GetPizzasByMenuIdAsync(int menuId);
     }
 }

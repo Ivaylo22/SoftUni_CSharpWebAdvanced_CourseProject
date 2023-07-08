@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PizzasForMenuViewModel>
+
+@{
+    ViewData["Title"] = "Pizzas";
+}
+
+<div class="row">
+    @foreach (var pizza in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="@pizza.ImageUrl" class="card-img-top" alt="Pizza Image">
+                <div class="card-body">
+                    <h5 class="card-title">@pizza.Name</h5>
+                    <p class="card-text">@pizza.Description</p>
+                    <h6>Products:</h6>
+                    <ul>
+                        @foreach (var product in pizza.Products)
+                        {
+                            <li>@product.Name</li>
+                        }
+                    </ul>
+                    <p class="card-text">Price: $@pizza.InitialPrice</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<a asp-controller="Menu" asp-action="All" class="btn btn-primary">Back to Menu</a>
+
+
+
+
+
+
