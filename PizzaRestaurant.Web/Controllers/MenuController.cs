@@ -130,7 +130,7 @@
         [HttpGet]
         public async Task<IActionResult> AddPizzas(int menuId)
         {
-            var model = await pizzaService.GetAllPizzasAsync(menuId);
+            var model = await pizzaService.GetAllPizzasWithDifferentMenuIdAsync(menuId);
             ViewBag.MenuId = menuId;
 
             return View(model);

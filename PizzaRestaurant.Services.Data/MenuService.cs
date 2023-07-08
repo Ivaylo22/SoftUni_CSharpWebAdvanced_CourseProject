@@ -167,7 +167,16 @@
                 return false;
             }
 
-            var menuPizza = new MenuPizza
+            var menuPizza = await dbContext
+                .MenusPizzas
+                .FirstOrDefaultAsync(mp => mp.MenuId == menuId && mp.PizzaId == pizzaId);
+
+            if (menuPizza != null)
+            {
+                return false;
+            }
+
+            menuPizza = new MenuPizza
             {
                 MenuId = menuId,
                 PizzaId = pizzaId

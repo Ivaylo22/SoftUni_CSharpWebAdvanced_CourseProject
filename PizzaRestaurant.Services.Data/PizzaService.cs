@@ -15,10 +15,11 @@
             this.dbContext = _dbContext;
         }
 
-        public async Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasAsync(int id)
+        public async Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasWithDifferentMenuIdAsync(int id)
         {
             return await dbContext
                     .Pizzas
+                    .Where(p => !p.MenusPizzas.Any(mp => mp.MenuId == id))
                     .Select(p => new PizzasForMenuViewModel
                     {
                         Id = p.Id,
