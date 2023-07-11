@@ -36,6 +36,11 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @{
+                <a asp-controller="Menu" asp-action="Add" class="text-decoration-none"> Add new menu </a>
+                <a asp-controller="Pizza" asp-action="Add" class="text-decoration-none"> Add new pizza </a>
+
+            }
             @RenderBody()
         </main>
     </div>

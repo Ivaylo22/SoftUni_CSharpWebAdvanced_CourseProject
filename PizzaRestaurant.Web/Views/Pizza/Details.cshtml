@@ -1,0 +1,26 @@
+﻿@model PizzaDetailsViewModel
+
+@{
+    ViewData["Title"] = "Pizza Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="@Model.ImageUrl" class="img-fluid" alt="Pizza Image">
+        </div>
+        <div class="col-md-6">
+            <h2>@Model.Name</h2>
+            <p>@Model.Description</p>
+            <h4>Price: $@Model.InitialPrice</h4>
+            <h4>Dough: @Model.DoughName</h4>
+            <h4>Products:</h4>
+            <ul>
+                @foreach (var product in Model.Products)
+                {
+                    <li>@product.Name</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

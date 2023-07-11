@@ -1,7 +1,7 @@
-﻿using PizzaRestaurant.Web.ViewModels.Products;
-
-namespace PizzaRestaurant.Web.ViewModels.Pizza
+﻿namespace PizzaRestaurant.Web.ViewModels.Pizza
 {
+    using PizzaRestaurant.Web.ViewModels.Products;
+
     public class PizzasForMenuViewModel
     {
         public PizzasForMenuViewModel()
