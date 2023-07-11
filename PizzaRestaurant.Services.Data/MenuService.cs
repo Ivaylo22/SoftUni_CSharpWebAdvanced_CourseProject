@@ -156,7 +156,6 @@
             return false;
         }
 
-        //TODO checkc if pizza is already in the menu
         public async Task<bool> AddPizzaToMenuAsync(int menuId, int pizzaId)
         {
             var menu = await dbContext.Menus.FindAsync(menuId);
