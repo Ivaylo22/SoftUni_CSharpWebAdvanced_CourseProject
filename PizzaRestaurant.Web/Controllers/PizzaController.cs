@@ -29,7 +29,10 @@
         [HttpGet]
         public async Task<IActionResult> All()
         {
-            return View();
+            IEnumerable<PizzasForMenuViewModel> model = await pizzaService
+                .GetAllPizzasWithDifferentMenuIdAsync();
+
+            return View(model);
         }
 
         [HttpGet]

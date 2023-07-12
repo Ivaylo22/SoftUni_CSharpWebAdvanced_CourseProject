@@ -80,6 +80,28 @@
                     .ToArrayAsync();
         }
 
+        public async Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasWithDifferentMenuIdAsync()
+        {
+            return await dbContext
+                    .Pizzas
+                    .Select(p => new PizzasForMenuViewModel
+                    {
+                        Id = p.Id,
+                        Name = p.Name,
+                        InitialPrice = p.InitialPrice,
+                        ImageUrl = p.ImageUrl,
+                        Description = p.Description,
+                        DoughName = p.Dough.Name,
+                        Products = p.PizzaProducts
+                            .Select(pp => new ProductsForPizzaViewModel
+                            {
+                                Name = pp.Product.Name
+                            })
+                            .ToArray()
+                    })
+                    .ToArrayAsync();
+        }
+
         public async Task<PizzaDetailsViewModel?> GetPizzaByIdAsync(int pizzaId)
         {
             Pizza? pizza = await dbContext.Pizzas

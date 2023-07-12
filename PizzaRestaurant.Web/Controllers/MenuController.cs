@@ -6,6 +6,7 @@
     using PizzaRestaurant.Web.ViewModels.Menu;
 
     using static PizzaRestaurant.Common.NotificationMessagesConstants;
+
     public class MenuController : BaseController
     {
         private readonly IMenuService menuService;
