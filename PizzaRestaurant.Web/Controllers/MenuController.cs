@@ -87,6 +87,19 @@
         }
 
         [HttpGet]
+        public async Task<IActionResult> RemovePizzaFromMenu(int menuId, int pizzaId)
+        {
+            var success = await menuService.RemovePizzaFromMenuAsync(menuId, pizzaId);
+
+            if (!success)
+            {
+                TempData["ErrorMessage"] = "Failed to remove pizza from the menu.";
+            }
+
+            return RedirectToAction("Edit", new { id = menuId });
+        }
+
+        [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
             EditMenuViewModel model = await menuService.GetMenuForEditAsync(id);
@@ -115,18 +128,6 @@
             return RedirectToAction("All", "Menu");
         }
 
-        [HttpGet]
-        public async Task<IActionResult> RemovePizzaFromMenu(int menuId, int pizzaId)
-        {
-            var success = await menuService.RemovePizzaFromMenuAsync(menuId, pizzaId);
-
-            if (!success)
-            {
-                TempData["ErrorMessage"] = "Failed to remove pizza from the menu.";
-            }
-
-            return RedirectToAction("Edit", new { id = menuId });
-        }
 
         [HttpGet]
         public async Task<IActionResult> AddPizzas(int menuId)

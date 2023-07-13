@@ -221,5 +221,31 @@
                 await this.dbContext.SaveChangesAsync();
             }
         }
+
+        public async Task<DeletePizzaViewModel> GetPizzaForDeleteAsync(int id)
+        {
+            Pizza pizzaToDelete = await dbContext
+                .Pizzas
+                .FirstAsync(p => p.Id == id);
+
+            return new DeletePizzaViewModel()
+            {
+                Name = pizzaToDelete.Name,
+                InitialPrice = pizzaToDelete.InitialPrice,
+                ImageUrl = pizzaToDelete.ImageUrl,
+                Description = pizzaToDelete.Description
+            };
+        }
+
+        public async Task DeleteByIdAsync(int id)
+        {
+            Pizza pizzaToDelete = await this.dbContext
+                .Pizzas
+                .FirstAsync(p => p.Id == id);
+
+            this.dbContext.Remove(pizzaToDelete);
+            this.dbContext.SaveChanges();
+
+        }
     }
 }

@@ -78,6 +78,7 @@
             }    
         }
 
+        [HttpGet]
         public async Task<IActionResult> Details(int pizzaId)
         {
             try
@@ -128,6 +129,39 @@
                 editModel.AvailableProducts = await productService.GetAllProductsAsync();
                 editModel.ProductsId = await productService.GetProductsByPizzaIdAsync(id);
                 return View(editModel);
+            }
+
+            return RedirectToAction("All", "Pizza");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                DeletePizzaViewModel pizzaModel =
+                    await pizzaService.GetPizzaForDeleteAsync(id);
+
+                return View(pizzaModel);
+            }
+            catch (Exception)
+            {
+                TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                return RedirectToAction("All", "Pizza");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id, DeletePizzaViewModel pizzaModel)
+        {
+            try
+            {
+                await pizzaService.DeleteByIdAsync(id);
+            }
+            catch (Exception)
+            {
+                TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                return View(pizzaModel);
             }
 
             return RedirectToAction("All", "Pizza");
