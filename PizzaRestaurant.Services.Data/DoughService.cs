@@ -15,16 +15,34 @@
         {
             this.dbContext = _dbContext;
         }
-        public async Task<IEnumerable<DoughForAddPizzaViewModel>> GetAllDoughsAsync()
+        public async Task<IEnumerable<DoughViewModel>> GetAllDoughsAsync()
         {
             return await dbContext
                 .Doughs
-                .Select(d => new DoughForAddPizzaViewModel
+                .Select(d => new DoughViewModel
                 {
                     Id = d.Id,
                     Name = d.Name
                 })
                 .ToArrayAsync();
+        }
+
+        public async Task<DoughViewModel?> GetDoughByIdAsync(int doughId)
+        {
+            var dough = await dbContext
+                .Doughs
+                .FirstOrDefaultAsync(d => d.Id == doughId);
+
+            if (dough != null)
+            {
+                return new DoughViewModel
+                {
+                    Id = dough.Id,
+                    Name = dough.Name
+                };
+            }
+
+            return null;
         }
     }
 }

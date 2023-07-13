@@ -30,7 +30,7 @@
         public async Task<IActionResult> All()
         {
             IEnumerable<PizzasForMenuViewModel> model = await pizzaService
-                .GetAllPizzasWithDifferentMenuIdAsync();
+                .GetAllPizzasAsync();
 
             return View(model);
         }
@@ -91,5 +91,47 @@
                 return RedirectToAction("Index", "Home");
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            EditPizzaViewModel? model = await pizzaService.GetPizzaForEditAsync(id);
+
+            if(model != null)
+            {
+                model.Doughs = await doughService.GetAllDoughsAsync();
+                model.AvailableProducts = await productService.GetAllProductsAsync();
+                model.ProductsId = await productService.GetProductsByPizzaIdAsync(id);
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditPizzaViewModel editModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(editModel);
+            }
+
+            try
+            {
+                await pizzaService.EditPizzaByIdAndEditModelAsync(id, editModel);
+                TempData[SuccessMessage] = "Pizza is successfully edited!";
+
+            }
+            catch (Exception)
+            {
+                TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                editModel.Doughs = await doughService.GetAllDoughsAsync();
+                editModel.AvailableProducts = await productService.GetAllProductsAsync();
+                editModel.ProductsId = await productService.GetProductsByPizzaIdAsync(id);
+                return View(editModel);
+            }
+
+            return RedirectToAction("All", "Pizza");
+        }
+
     }
 }

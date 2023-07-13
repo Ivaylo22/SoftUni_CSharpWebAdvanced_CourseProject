@@ -25,5 +25,14 @@
                 })
                 .ToArrayAsync();
         }
+
+        public async Task<IEnumerable<int>> GetProductsByPizzaIdAsync(int pizzaId)
+        {
+            return await this.dbContext
+                .PizzasProducts
+                .Where(pp => pp.PizzaId == pizzaId)
+                .Select(pp => pp.ProductId)
+                .ToArrayAsync();
+        }
     }
 }

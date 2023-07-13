@@ -11,11 +11,12 @@
         public AddPizzaViewModel()
         {
             this.AvailableProducts = new HashSet<ProductsForPizzaViewModel>();
-            this.Doughs = new HashSet<DoughForAddPizzaViewModel>();
+            this.Doughs = new HashSet<DoughViewModel>();
             this.ProductsId = new HashSet<int>();
         }
 
         [Required]
+        [MinLength(NameMinLength)]
         [MaxLength(NameMaxLength)]
         public string Name { get; set; } = null!;
 
@@ -23,17 +24,19 @@
         public decimal InitialPrice { get; set; }
 
         [Required]
+        [MinLength(ImageMinLength)]
         [MaxLength(ImageMaxLength)]
         public string ImageUrl { get; set; } = null!;
 
         [Required]
+        [MinLength(DescriptionMinLength)]
         [MaxLength(DescriptionMaxLength)]
         public string Description { get; set; } = null!;
 
         [Required]
         public int DoughId { get; set; }
 
-        public IEnumerable<DoughForAddPizzaViewModel> Doughs { get; set; }
+        public IEnumerable<DoughViewModel> Doughs { get; set; }
 
         public IEnumerable<ProductsForPizzaViewModel> AvailableProducts { get; set; }
 

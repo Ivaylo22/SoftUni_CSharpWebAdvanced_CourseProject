@@ -4,6 +4,7 @@ namespace PizzaRestaurant.Services.Data.Interfaces
 {
     public interface IDoughService
     {
-        Task<IEnumerable<DoughForAddPizzaViewModel>> GetAllDoughsAsync();
+        Task<IEnumerable<DoughViewModel>> GetAllDoughsAsync();
+        Task<DoughViewModel?> GetDoughByIdAsync(int doughId);
     }
 }

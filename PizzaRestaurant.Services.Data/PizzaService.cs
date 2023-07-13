@@ -4,16 +4,21 @@
     using PizzaRestaurant.Data;
     using PizzaRestaurant.Data.Models;
     using PizzaRestaurant.Services.Data.Interfaces;
+    using PizzaRestaurant.Web.ViewModels.Menu;
     using PizzaRestaurant.Web.ViewModels.Pizza;
     using PizzaRestaurant.Web.ViewModels.Products;
 
     public class PizzaService : IPizzaService
     {
         private readonly PizzaRestaurantDbContext dbContext;
+        private readonly IDoughService doughService;
+        private readonly IProductService productService;
 
-        public PizzaService(PizzaRestaurantDbContext _dbContext)
+        public PizzaService(PizzaRestaurantDbContext _dbContext, IDoughService _doughService, IProductService _productService)
         {
             this.dbContext = _dbContext;
+            this.doughService = _doughService;
+            this.productService = _productService;
         }
 
         public async Task AddPizzaAsync(AddPizzaViewModel model)
@@ -80,7 +85,7 @@
                     .ToArrayAsync();
         }
 
-        public async Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasWithDifferentMenuIdAsync()
+        public async Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasAsync()
         {
             return await dbContext
                     .Pizzas
@@ -134,6 +139,28 @@
             return viewModel;
         }
 
+        public async Task<EditPizzaViewModel?> GetPizzaForEditAsync(int id)
+        {
+            Pizza? pizzaToEdit = await dbContext
+                .Pizzas
+                .Include (p => p.PizzaProducts)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if(pizzaToEdit != null)
+            {
+                return new EditPizzaViewModel()
+                {
+                    Id = pizzaToEdit.Id,
+                    Name = pizzaToEdit.Name,
+                    InitialPrice = pizzaToEdit.InitialPrice,
+                    ImageUrl = pizzaToEdit.ImageUrl,
+                    Description = pizzaToEdit.Description,
+                    DoughId = pizzaToEdit.DoughId,
+                };
+            }
+            return null;
+        }
+
         public async Task<IEnumerable<PizzasForMenuViewModel>> GetPizzasByMenuIdAsync(int menuId)
         {
             return await dbContext
@@ -155,6 +182,44 @@
                             .ToArray()
                     })
                     .ToArrayAsync();
+        }
+
+        public async Task EditPizzaByIdAndEditModelAsync(int id, EditPizzaViewModel editModel)
+        {
+            Pizza pizza = await dbContext
+                .Pizzas
+                .FirstAsync(p => p.Id == id);
+
+            if(pizza != null)
+            {
+                pizza.Name = editModel.Name;
+                pizza.InitialPrice = editModel.InitialPrice;
+                pizza.ImageUrl = editModel.ImageUrl;
+                pizza.Description = editModel.Description;
+                pizza.DoughId = editModel.DoughId;
+
+                List<PizzaProduct> existingPizzaProducts = await dbContext.PizzasProducts
+                    .Where(pp => pp.PizzaId == id)
+                    .ToListAsync();
+
+                dbContext.PizzasProducts.RemoveRange(existingPizzaProducts);
+
+                if (editModel.ProductsId.Any())
+                {
+                    foreach (var productId in editModel.ProductsId)
+                    {
+                        PizzaProduct pp = new PizzaProduct()
+                        {
+                            PizzaId = id,
+                            ProductId = productId
+                        };
+
+                        await this.dbContext.AddAsync(pp);
+                    }
+                }
+
+                await this.dbContext.SaveChangesAsync();
+            }
         }
     }
 }
