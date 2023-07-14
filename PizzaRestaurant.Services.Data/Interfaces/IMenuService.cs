@@ -12,7 +12,8 @@
         Task<IEnumerable<PizzasForMenuViewModel>> GetAllPizzasByMenuIdAsync(int id);
         Task<DeleteMenuViewModel> GetMenuForDeleteAsync(int id);
         Task<EditMenuViewModel> GetMenuForEditAsync(int id);
-        Task<bool> RemovePizzaFromMenuAsync(int menuId, int pizzaId);
+        Task RemovePizzaFromMenuAsync(int menuId, int pizzaId);
         Task<bool> AddPizzaToMenuAsync(int menuId, int pizzaId);
+        Task<RemovePizzaFromMenuViewModel> GetRemovePizzaView(int menuId, int pizzaId);
     }
 }

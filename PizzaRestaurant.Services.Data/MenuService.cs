@@ -137,16 +137,11 @@
             };
         }
 
-        public async Task<bool> RemovePizzaFromMenuAsync(int menuId, int pizzaId)
+        public async Task RemovePizzaFromMenuAsync(int menuId, int pizzaId)
         {
             var menu = await dbContext.Menus
                 .Include(m => m.MenusPizzas)
                 .FirstOrDefaultAsync(m => m.Id == menuId);
-
-            if (menu == null)
-            {
-                return false;
-            }
 
             var menuPizza = menu.MenusPizzas
                 .FirstOrDefault(mp => mp.PizzaId == pizzaId);
@@ -155,10 +150,7 @@
             {
                 menu.MenusPizzas.Remove(menuPizza);
                 await dbContext.SaveChangesAsync();
-                return true;
             }
-
-            return false;
         }
 
         public async Task<bool> AddPizzaToMenuAsync(int menuId, int pizzaId)
@@ -190,6 +182,25 @@
             await dbContext.SaveChangesAsync();
 
             return true;
+        }
+
+        public async Task<RemovePizzaFromMenuViewModel> GetRemovePizzaView(int menuId, int pizzaId)
+        {
+            Menu? menu = await dbContext
+                .Menus
+                .FirstOrDefaultAsync(m => m.Id == menuId);
+
+            Pizza? pizza = await dbContext
+                .Pizzas
+                .FirstOrDefaultAsync(p => p.Id == pizzaId);
+
+            return new RemovePizzaFromMenuViewModel()
+            {
+                MenuId = menuId,
+                PizzaId = pizzaId,
+                MenuName = menu.Name,
+                PizzaName = pizza.Name
+            };
         }
     }
 }

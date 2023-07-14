@@ -79,11 +79,12 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> Details(int pizzaId)
+        public async Task<IActionResult> Details(int pizzaId, string returnUrl)
         {
             try
             {
                 PizzaDetailsViewModel? model = await pizzaService.GetPizzaByIdAsync(pizzaId);
+                ViewBag.ReturnUrl = returnUrl;
                 return View(model);
             }
             catch (Exception)
@@ -164,6 +165,7 @@
                 return View(pizzaModel);
             }
 
+            TempData[SuccessMessage] = "Pizza is deleted successfully";
             return RedirectToAction("All", "Pizza");
         }
 

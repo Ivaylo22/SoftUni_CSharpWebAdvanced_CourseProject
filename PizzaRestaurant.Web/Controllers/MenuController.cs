@@ -4,7 +4,6 @@
 
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Menu;
-
     using static PizzaRestaurant.Common.NotificationMessagesConstants;
 
     public class MenuController : BaseController
@@ -89,14 +88,29 @@
         [HttpGet]
         public async Task<IActionResult> RemovePizzaFromMenu(int menuId, int pizzaId)
         {
-            var success = await menuService.RemovePizzaFromMenuAsync(menuId, pizzaId);
+            RemovePizzaFromMenuViewModel model = 
+                await menuService.GetRemovePizzaView(menuId, pizzaId);
 
-            if (!success)
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemovePizzaFromMenu(RemovePizzaFromMenuViewModel model)
+        {
+
+            try
+            {
+                await menuService.RemovePizzaFromMenuAsync(model.MenuId, model.PizzaId);
+                TempData["SuccessMessage"] = "Pizza is successfully removed from the menu";
+            }
+            catch(Exception)
             {
                 TempData["ErrorMessage"] = "Failed to remove pizza from the menu.";
+                model = await menuService.GetRemovePizzaView(model.MenuId, model.PizzaId);
+                return View(model);
             }
 
-            return RedirectToAction("Edit", new { id = menuId });
+            return RedirectToAction("Edit", new { id = model.MenuId });
         }
 
         [HttpGet]
@@ -159,6 +173,7 @@
             try
             {
                 var pizzas = await pizzaService.GetPizzasByMenuIdAsync(menuId);
+                ViewBag.MenuId = menuId;
                 return View(pizzas);
             }
             catch
