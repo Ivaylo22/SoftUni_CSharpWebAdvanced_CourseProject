@@ -72,6 +72,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGl6emFcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Ivaylo/Programming/Softuni/SoftUni_CSharpWebAdvanced_CourseProject/PizzaRestaurant.Web/Views/Product/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ivaylo/Programming/Softuni/SoftUni_CSharpWebAdvanced_CourseProject/PizzaRestaurant.Web/Views/Product/Options.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxPcHRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ivaylo/Programming/Softuni/SoftUni_CSharpWebAdvanced_CourseProject/PizzaRestaurant.Web/Views/Product/Remove.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxSZW1vdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ivaylo/Programming/Softuni/SoftUni_CSharpWebAdvanced_CourseProject/PizzaRestaurant.Web/Views/Product/RemoveProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxSZW1vdmVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Ivaylo/Programming/Softuni/SoftUni_CSharpWebAdvanced_CourseProject/PizzaRestaurant.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

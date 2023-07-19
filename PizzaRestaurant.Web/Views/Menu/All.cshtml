@@ -7,10 +7,10 @@
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
-<div class="text-center row">
+<div class="text-center row d-flex justify-content-around">
     @foreach (var e in Model)
     {
-        <div class="card col-4" style="width: 20rem; ">
+        <div class="card col-4">
             <div class="card-body">
                 <h5 class="card-title mt-1 text-warning">@e.Name</h5>
                 <p class="mb-0"><span class="fw-bold">Description: </span>@e.Description</p>
