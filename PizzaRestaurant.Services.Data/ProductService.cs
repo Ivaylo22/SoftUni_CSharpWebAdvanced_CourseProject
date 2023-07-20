@@ -33,7 +33,7 @@
                 .Product
                 .FirstAsync(x => x.Id == id);
 
-            dbContext.Remove(productToDelete);
+            dbContext.Product.Remove(productToDelete);
             await dbContext.SaveChangesAsync();
         }
 

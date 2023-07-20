@@ -64,7 +64,7 @@
             catch (Exception)
             {
                 TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
-                return RedirectToAction("All", "Pizza");
+                return RedirectToAction("Options", "Product");
             }
         }
 

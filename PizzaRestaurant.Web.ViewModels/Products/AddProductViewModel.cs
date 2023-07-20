@@ -10,5 +10,7 @@
         [MinLength(NameMinLength)]
         [MaxLength(NameMaxLength)]
         public string Name { get; set; } = null!;
+
+        public decimal Price { get; set; }
     }
 }
