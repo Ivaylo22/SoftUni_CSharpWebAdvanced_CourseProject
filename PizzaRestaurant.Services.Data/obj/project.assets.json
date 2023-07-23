@@ -927,6 +927,16 @@
           "bin/placeholder/PizzaRestaurant.Data.Models.dll": {}
         }
       },
+      "PizzaRestaurant.Services.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/PizzaRestaurant.Services.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PizzaRestaurant.Services.Data.Models.dll": {}
+        }
+      },
       "PizzaRestaurant.Web.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2375,6 +2385,11 @@
       "path": "../PizzaRestaurant.Data.Models/PizzaRestaurant.Data.Models.csproj",
       "msbuildProject": "../PizzaRestaurant.Data.Models/PizzaRestaurant.Data.Models.csproj"
     },
+    "PizzaRestaurant.Services.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../PizzaRestaurant.Services.Data.Models/PizzaRestaurant.Services.Data.Models.csproj",
+      "msbuildProject": "../PizzaRestaurant.Services.Data.Models/PizzaRestaurant.Services.Data.Models.csproj"
+    },
     "PizzaRestaurant.Web.ViewModels/1.0.0": {
       "type": "project",
       "path": "../PizzaRestaurant.Web.ViewModels/PizzaRestaurant.Web.ViewModels.csproj",
@@ -2386,6 +2401,7 @@
       "PizzaRestaurant.Common >= 1.0.0",
       "PizzaRestaurant.Data >= 1.0.0",
       "PizzaRestaurant.Data.Models >= 1.0.0",
+      "PizzaRestaurant.Services.Data.Models >= 1.0.0",
       "PizzaRestaurant.Web.ViewModels >= 1.0.0"
     ]
   },
@@ -2430,6 +2446,9 @@
             },
             "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj": {
               "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj"
+            },
+            "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data.Models\\PizzaRestaurant.Services.Data.Models.csproj": {
+              "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data.Models\\PizzaRestaurant.Services.Data.Models.csproj"
             },
             "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web.ViewModels\\PizzaRestaurant.Web.ViewModels.csproj": {
               "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web.ViewModels\\PizzaRestaurant.Web.ViewModels.csproj"

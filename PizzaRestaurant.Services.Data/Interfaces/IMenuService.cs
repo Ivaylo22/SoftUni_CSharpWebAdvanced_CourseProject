@@ -1,5 +1,6 @@
 ﻿namespace PizzaRestaurant.Services.Data.Interfaces
 {
+    using PizzaRestaurant.Services.Data.Models;
     using PizzaRestaurant.Web.ViewModels.Menu;
     using PizzaRestaurant.Web.ViewModels.Pizza;
 
@@ -15,5 +16,7 @@
         Task RemovePizzaFromMenuAsync(int menuId, int pizzaId);
         Task<bool> AddPizzaToMenuAsync(int menuId, int pizzaId);
         Task<RemovePizzaFromMenuViewModel> GetRemovePizzaView(int menuId, int pizzaId);
+        Task<StatisticsServiceModel> GetStatisticsAsync();
+
     }
 }

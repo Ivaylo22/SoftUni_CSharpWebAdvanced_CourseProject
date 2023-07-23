@@ -7,6 +7,7 @@ using PizzaRestaurant.Data.Models;
 using HouseRentingSystem.Web.Infrastructure.Extensions;
 using PizzaRestaurant.Services.Data.Interfaces;
 using PizzaRestaurant.Web.Infrastructures.ModelBinders;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,7 @@ builder.Services
     .AddMvcOptions(options =>
     {
         options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+        options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
     });
 
 var app = builder.Build();

@@ -10,6 +10,7 @@
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Menu;
     using PizzaRestaurant.Web.ViewModels.Pizza;
+    using PizzaRestaurant.Services.Data.Models;
 
     public class MenuService : IMenuService
     {
@@ -200,6 +201,15 @@
                 PizzaId = pizzaId,
                 MenuName = menu.Name,
                 PizzaName = pizza.Name
+            };
+        }
+
+        public async Task<StatisticsServiceModel> GetStatisticsAsync()
+        {
+            return new StatisticsServiceModel()
+            {
+                TotalPizzas = await dbContext.Pizzas.CountAsync(),
+                TotalMenus = await dbContext.Menus.CountAsync()
             };
         }
     }

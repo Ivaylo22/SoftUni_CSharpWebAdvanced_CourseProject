@@ -3478,6 +3478,7 @@
           "PizzaRestaurant.Common": "1.0.0",
           "PizzaRestaurant.Data": "1.0.0",
           "PizzaRestaurant.Data.Models": "1.0.0",
+          "PizzaRestaurant.Services.Data.Models": "1.0.0",
           "PizzaRestaurant.Web.ViewModels": "1.0.0"
         },
         "compile": {
@@ -3485,6 +3486,16 @@
         },
         "runtime": {
           "bin/placeholder/PizzaRestaurant.Services.Data.dll": {}
+        }
+      },
+      "PizzaRestaurant.Services.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/PizzaRestaurant.Services.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PizzaRestaurant.Services.Data.Models.dll": {}
         }
       },
       "PizzaRestaurant.Web.Infrastructures/1.0.0": {
@@ -9609,6 +9620,11 @@
       "type": "project",
       "path": "../PizzaRestaurant.Services.Data/PizzaRestaurant.Services.Data.csproj",
       "msbuildProject": "../PizzaRestaurant.Services.Data/PizzaRestaurant.Services.Data.csproj"
+    },
+    "PizzaRestaurant.Services.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../PizzaRestaurant.Services.Data.Models/PizzaRestaurant.Services.Data.Models.csproj",
+      "msbuildProject": "../PizzaRestaurant.Services.Data.Models/PizzaRestaurant.Services.Data.Models.csproj"
     },
     "PizzaRestaurant.Web.Infrastructures/1.0.0": {
       "type": "project",

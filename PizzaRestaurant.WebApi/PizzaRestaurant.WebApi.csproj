@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>41172f00-7d63-4541-a907-8ca4750197b5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PizzaRestaurant.Common\PizzaRestaurant.Common.csproj" />
+    <ProjectReference Include="..\PizzaRestaurant.Services.Data.Models\PizzaRestaurant.Services.Data.Models.csproj" />
+    <ProjectReference Include="..\PizzaRestaurant.Services.Data\PizzaRestaurant.Services.Data.csproj" />
+    <ProjectReference Include="..\PizzaRestaurant.Web.Infrastructures\PizzaRestaurant.Web.Infrastructures.csproj" />
+  </ItemGroup>
+
+</Project>
