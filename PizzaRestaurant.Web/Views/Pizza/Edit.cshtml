@@ -1,10 +1,11 @@
 ﻿@model EditPizzaViewModel
 
 @{
-    ViewData["Title"] = "Edit Pizza";
+    ViewData["Title"] = $"{Model.Name} Edit";
 }
 
-<h2>Edit Pizza</h2>
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
 
 <form method="post" asp-action="Edit" asp-route-id="@Model.Id">
     <div class="form-group">

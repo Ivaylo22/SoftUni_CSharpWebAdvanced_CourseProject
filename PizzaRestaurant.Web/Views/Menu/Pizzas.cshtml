@@ -16,9 +16,12 @@
                     <h5 class="card-title">@pizza.Name</h5>
                     <p class="card-text">@pizza.Description</p>
                     <p class="card-text">Price: $@pizza.InitialPrice</p>
-                    <div class="mt-auto">
+
+                    <div class="d-flex justify-content-between mt-3">
                         <a asp-controller="Pizza" asp-action="Details" asp-route-pizzaId="@pizza.Id" asp-route-returnUrl="@returnUrl" class="btn btn-primary w-100">View Details</a>
+                        <a asp-controller="Pizza" asp-action="OrderPizza" asp-route-pizzaId="@pizza.Id" asp-route-returnUrl="@returnUrl" class="btn btn-primary w-100 ms-2">Order Pizza</a>
                     </div>
+                    
                 </div>
             </div>
         </div>

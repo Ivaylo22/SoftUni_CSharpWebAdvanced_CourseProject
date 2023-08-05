@@ -29,8 +29,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-3 w-100">
-                    <a href="@Url.Action("Details", "Pizza", new { pizzaId = pizza.Id, returnUrl = currentPath })" class="btn btn-primary w-100">View Details</a>
+                <div class="d-flex justify-content-between mt-3">
+                    <a asp-controller="Pizza" asp-action="Details" asp-route-pizzaId="@pizza.Id" asp-route-returnUrl="@currentPath" class="btn btn-primary w-100">View Details</a>
+                    <a asp-controller="Pizza" asp-action="OrderPizza" asp-route-pizzaId="@pizza.Id" asp-route-returnUrl="@currentPath" class="btn btn-primary w-100 ms-2">Order Pizza</a>
                 </div>
             </div>
         </div>

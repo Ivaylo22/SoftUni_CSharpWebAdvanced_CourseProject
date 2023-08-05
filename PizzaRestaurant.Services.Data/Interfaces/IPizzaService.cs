@@ -14,5 +14,6 @@ namespace PizzaRestaurant.Services.Data.Interfaces
         Task EditPizzaByIdAndEditModelAsync(int id, EditPizzaViewModel editModel);
         Task<DeletePizzaViewModel> GetPizzaForDeleteAsync(int id);
         Task DeleteByIdAsync(int id);
+        Task<OrderPizzaViewModel?> GetPizzaForOrderAsync(int pizzaId);
     }
 }

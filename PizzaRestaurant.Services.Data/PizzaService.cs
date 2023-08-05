@@ -7,18 +7,21 @@
     using PizzaRestaurant.Web.ViewModels.Menu;
     using PizzaRestaurant.Web.ViewModels.Pizza;
     using PizzaRestaurant.Web.ViewModels.Products;
+    using PizzaRestaurant.Web.ViewModels.Topping;
 
     public class PizzaService : IPizzaService
     {
         private readonly PizzaRestaurantDbContext dbContext;
         private readonly IDoughService doughService;
         private readonly IProductService productService;
+        private readonly IToppingService toppingService;
 
-        public PizzaService(PizzaRestaurantDbContext _dbContext, IDoughService _doughService, IProductService _productService)
+        public PizzaService(PizzaRestaurantDbContext _dbContext, IDoughService _doughService, IProductService _productService, IToppingService _toppingService)
         {
             this.dbContext = _dbContext;
             this.doughService = _doughService;
             this.productService = _productService;
+            this.toppingService = _toppingService;
         }
 
         public async Task AddPizzaAsync(AddPizzaViewModel model)
@@ -120,7 +123,7 @@
                 return null;
             }
 
-            var viewModel = new PizzaDetailsViewModel
+            PizzaDetailsViewModel viewModel = new PizzaDetailsViewModel
             {
                 Id = pizza.Id,
                 Name = pizza.Name,
@@ -246,6 +249,35 @@
             this.dbContext.Remove(pizzaToDelete);
             this.dbContext.SaveChanges();
 
+        }
+
+        public async Task<OrderPizzaViewModel?> GetPizzaForOrderAsync(int pizzaId)
+        {
+            Pizza? pizza = await dbContext.Pizzas
+                .Include(p => p.PizzaProducts)
+                    .ThenInclude(pp => pp.Product)
+                .Include(p => p.Dough)
+                .Include(p => p.Toppings)
+                .FirstOrDefaultAsync(p => p.Id == pizzaId);
+
+            OrderPizzaViewModel viewModel = new OrderPizzaViewModel()
+            {
+                Id = pizza.Id,
+                Name = pizza.Name,
+                InitialPrice = pizza.InitialPrice,
+                ImageUrl = pizza.ImageUrl,
+                Description = pizza.Description,
+                DoughName = pizza.Dough.Name,
+                Products = pizza.PizzaProducts
+                                .Select(pp => new ProductsForPizzaViewModel
+                                {
+                                    Name = pp.Product.Name
+                                })
+                                .ToArray(),
+                Toppings = await toppingService.GetAllToppingsAsync()
+            };
+
+            return viewModel;
         }
     }
 }

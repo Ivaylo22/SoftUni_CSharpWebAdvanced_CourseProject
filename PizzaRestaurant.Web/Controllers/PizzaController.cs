@@ -169,5 +169,21 @@
             return RedirectToAction("All", "Pizza");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> OrderPizza(int pizzaId, string returnUrl)
+        {
+            try
+            {
+                OrderPizzaViewModel? model = await pizzaService.GetPizzaForOrderAsync(pizzaId);
+                ViewBag.ReturnUrl = returnUrl;
+                return View(model);
+            }
+            catch (Exception)
+            {
+                TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
     }
 }
