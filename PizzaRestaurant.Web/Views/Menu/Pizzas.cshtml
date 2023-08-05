@@ -6,6 +6,9 @@
     string returnUrl = $"{Url.Action("Pizzas", "Menu")}?menuId={menuId}";
 }
 
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
 <div class="row">
     @foreach (var pizza in Model)
     {

@@ -23,8 +23,10 @@
                             <li>@product.Name</li>
                         }
                     </ul>
-                    <div class="col-md-6">
-                        <a href="@ViewBag.ReturnUrl" class="btn btn-primary w-100">Back</a>
+
+                    <div class="d-flex justify-content-between mt-3 p-3">
+                        <a href="@ViewBag.ReturnUrl" class="btn btn-primary w-100">Back</a>                  
+                        <a asp-controller="Pizza" asp-action="OrderPizza" asp-route-pizzaId="@Model.Id" asp-route-returnUrl="@ViewBag.ReturnUrl" class="btn btn-primary w-100 ms-2">Order Pizza</a>
                     </div>
                 </div>
             </div>

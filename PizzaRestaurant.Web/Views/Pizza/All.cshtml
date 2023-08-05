@@ -8,6 +8,9 @@
     var currentPath = ViewContext.HttpContext.Request.Path.Value;
 }
 
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
 <div class="row">
     @foreach (var pizza in Model)
     {
