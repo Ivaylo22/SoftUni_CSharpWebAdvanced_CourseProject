@@ -67,10 +67,24 @@
         public async Task<decimal> GetFinalPrizeAsync(string userId)
         {
             return await dbContext
-                .Carts
+                .CartsPizzas
                 .Where(c => c.UserId == Guid.Parse(userId))
-                .Select(c => c.FinalPrice)
+                .Select(cp => cp.UpdatedPrice)
                 .SumAsync();
+        }
+
+        public async Task RemovePizzaFromCartAsync(int cartId, int pizzaId, string userId)
+        {
+            CartPizza? cartPizza = await dbContext 
+                .CartsPizzas
+                .Where(cp => cp.CartId == cartId && cp.PizzaId == pizzaId && cp.UserId == Guid.Parse(userId))
+                .FirstOrDefaultAsync();
+
+            if(cartPizza != null)
+            {
+                dbContext.CartsPizzas.Remove(cartPizza);
+                await dbContext.SaveChangesAsync();
+            }
         }
     }
 }
