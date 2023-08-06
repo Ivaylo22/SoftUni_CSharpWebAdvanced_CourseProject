@@ -10,3 +10,10 @@ D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaResta
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\refint\PizzaRestaurant.Web.Infrastructures.dll
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.pdb
 D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\ref\PizzaRestaurant.Web.Infrastructures.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\bin\Debug\net6.0\PizzaRestaurant.Common.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\bin\Debug\net6.0\PizzaRestaurant.Data.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\bin\Debug\net6.0\PizzaRestaurant.Data.Models.dll
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\bin\Debug\net6.0\PizzaRestaurant.Common.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\bin\Debug\net6.0\PizzaRestaurant.Data.Models.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\bin\Debug\net6.0\PizzaRestaurant.Data.pdb
+D:\Ivaylo\Programming\Softuni\SoftUni_CSharpWebAdvanced_CourseProject\PizzaRestaurant.Web.Infrastructures\obj\Debug\net6.0\PizzaRestaurant.Web.Infrastructures.csproj.CopyComplete

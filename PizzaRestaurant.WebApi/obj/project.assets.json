@@ -3525,7 +3525,10 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc": "2.2.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "PizzaRestaurant.Common": "1.0.0",
+          "PizzaRestaurant.Data": "1.0.0",
+          "PizzaRestaurant.Data.Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/PizzaRestaurant.Web.Infrastructures.dll": {}

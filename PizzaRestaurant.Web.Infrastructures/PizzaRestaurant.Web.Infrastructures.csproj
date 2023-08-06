@@ -11,4 +11,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PizzaRestaurant.Common\PizzaRestaurant.Common.csproj" />
+    <ProjectReference Include="..\PizzaRestaurant.Data.Models\PizzaRestaurant.Data.Models.csproj" />
+    <ProjectReference Include="..\PizzaRestaurant.Data\PizzaRestaurant.Data.csproj" />
+  </ItemGroup>
+
 </Project>

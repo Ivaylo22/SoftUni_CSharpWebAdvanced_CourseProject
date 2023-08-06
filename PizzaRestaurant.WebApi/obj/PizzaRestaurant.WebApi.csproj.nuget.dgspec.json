@@ -381,7 +381,17 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Common\\PizzaRestaurant.Common.csproj": {
+                "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Common\\PizzaRestaurant.Common.csproj"
+              },
+              "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data.Models\\PizzaRestaurant.Data.Models.csproj": {
+                "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data.Models\\PizzaRestaurant.Data.Models.csproj"
+              },
+              "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj": {
+                "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

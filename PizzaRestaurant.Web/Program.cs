@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 
 using PizzaRestaurant.Web;
@@ -8,6 +7,10 @@ using HouseRentingSystem.Web.Infrastructure.Extensions;
 using PizzaRestaurant.Services.Data.Interfaces;
 using PizzaRestaurant.Web.Infrastructures.ModelBinders;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Razor.Language.Intermediate;
+
+using static PizzaRestaurant.Common.GeneralApplicationConstants;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,19 +22,19 @@ builder.Services.AddDbContext<PizzaRestaurantDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
-{
-    options.SignIn.RequireConfirmedAccount =
-        builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
-    options.Password.RequireLowercase =
-        builder.Configuration.GetValue<bool>("Identity:Password:RequireLowercase");
-    options.Password.RequireUppercase =
-        builder.Configuration.GetValue<bool>("Identity:Password:RequireUppercase");
-    options.Password.RequireNonAlphanumeric =
-        builder.Configuration.GetValue<bool>("Identity:Password:RequireNonAlphanumeric");
-    options.Password.RequiredLength =
-        builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
-})
-
+    {
+        options.SignIn.RequireConfirmedAccount =
+            builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
+        options.Password.RequireLowercase =
+            builder.Configuration.GetValue<bool>("Identity:Password:RequireLowercase");
+        options.Password.RequireUppercase =
+            builder.Configuration.GetValue<bool>("Identity:Password:RequireUppercase");
+        options.Password.RequireNonAlphanumeric =
+            builder.Configuration.GetValue<bool>("Identity:Password:RequireNonAlphanumeric");
+        options.Password.RequiredLength =
+            builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
+    })
+    .AddRoles<IdentityRole<Guid>>()
     .AddEntityFrameworkStores<PizzaRestaurantDbContext>();
 
 builder.Services.AddApplicationServices(typeof(IPizzaService));
@@ -67,6 +70,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.SeedAdministrator(DevelopmentAdminEmail);
 
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
