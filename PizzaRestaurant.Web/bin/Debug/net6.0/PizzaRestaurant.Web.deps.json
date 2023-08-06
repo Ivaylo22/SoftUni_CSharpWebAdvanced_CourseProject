@@ -17,6 +17,7 @@
           "PizzaRestaurant.Data": "1.0.0",
           "PizzaRestaurant.Data.Models": "1.0.0",
           "PizzaRestaurant.Services.Data": "1.0.0",
+          "PizzaRestaurant.Services.Data.Models": "1.0.0",
           "PizzaRestaurant.Web.Infrastructures": "1.0.0",
           "PizzaRestaurant.Web.ViewModels": "1.0.0"
         },

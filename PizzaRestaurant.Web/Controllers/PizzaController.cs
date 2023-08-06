@@ -1,5 +1,6 @@
 ﻿namespace PizzaRestaurant.Web.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     using PizzaRestaurant.Services.Data.Interfaces;
@@ -35,6 +36,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Add()
         {
             AddPizzaViewModel model = new AddPizzaViewModel()
@@ -47,6 +49,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Add(AddPizzaViewModel model)
         {
 
@@ -94,6 +97,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id)
         {
             EditPizzaViewModel? model = await pizzaService.GetPizzaForEditAsync(id);
@@ -109,6 +113,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id, EditPizzaViewModel editModel)
         {
             if (!ModelState.IsValid)
@@ -135,6 +140,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -152,6 +158,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int id, DeletePizzaViewModel pizzaModel)
         {
             try

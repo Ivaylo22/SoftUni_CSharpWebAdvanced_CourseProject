@@ -1,9 +1,12 @@
 ﻿namespace PizzaRestaurant.Web.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     using PizzaRestaurant.Services.Data.Interfaces;
+    using PizzaRestaurant.Web.Infrastructures.Extentions;
     using PizzaRestaurant.Web.ViewModels.Menu;
+    using System.Data;
     using static PizzaRestaurant.Common.NotificationMessagesConstants;
 
     public class MenuController : BaseController
@@ -32,16 +35,18 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public IActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Add(AddMenuViewModel model)
         {
 
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
@@ -52,6 +57,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -69,6 +75,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int id, DeleteMenuViewModel menuModel)
         {
             try
@@ -85,15 +92,17 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> RemovePizzaFromMenu(int menuId, int pizzaId)
         {
-            RemovePizzaFromMenuViewModel model = 
+            RemovePizzaFromMenuViewModel model =
                 await menuService.GetRemovePizzaView(menuId, pizzaId);
 
             return View(model);
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> RemovePizzaFromMenu(RemovePizzaFromMenuViewModel model)
         {
 
@@ -102,7 +111,7 @@
                 await menuService.RemovePizzaFromMenuAsync(model.MenuId, model.PizzaId);
                 TempData["SuccessMessage"] = "Pizza is successfully removed from the menu";
             }
-            catch(Exception)
+            catch (Exception)
             {
                 TempData["ErrorMessage"] = "Failed to remove pizza from the menu.";
                 model = await menuService.GetRemovePizzaView(model.MenuId, model.PizzaId);
@@ -113,6 +122,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id)
         {
             EditMenuViewModel model = await menuService.GetMenuForEditAsync(id);
@@ -121,9 +131,10 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id, EditMenuViewModel editModel)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(editModel);
             }
@@ -143,6 +154,7 @@
 
 
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> AddPizzas(int menuId)
         {
             var model = await pizzaService.GetAllPizzasWithDifferentMenuIdAsync(menuId);
@@ -152,6 +164,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> AddPizzaToMenu(int menuId, int pizzaId)
         {
             var success = await menuService.AddPizzaToMenuAsync(menuId, pizzaId);

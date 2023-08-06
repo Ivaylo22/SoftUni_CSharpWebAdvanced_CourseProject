@@ -1,5 +1,6 @@
 ﻿namespace PizzaRestaurant.Web.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Products;
@@ -7,6 +8,7 @@
 
     using static PizzaRestaurant.Common.NotificationMessagesConstants;
 
+    [Authorize(Roles = "Administrator")]
     public class ToppingController : BaseController
     {
         private readonly IToppingService toppingService;

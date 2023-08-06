@@ -9651,6 +9651,7 @@
       "PizzaRestaurant.Data >= 1.0.0",
       "PizzaRestaurant.Data.Models >= 1.0.0",
       "PizzaRestaurant.Services.Data >= 1.0.0",
+      "PizzaRestaurant.Services.Data.Models >= 1.0.0",
       "PizzaRestaurant.Web.Infrastructures >= 1.0.0",
       "PizzaRestaurant.Web.ViewModels >= 1.0.0"
     ]
@@ -9697,6 +9698,9 @@
             },
             "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj": {
               "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data\\PizzaRestaurant.Data.csproj"
+            },
+            "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data.Models\\PizzaRestaurant.Services.Data.Models.csproj": {
+              "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data.Models\\PizzaRestaurant.Services.Data.Models.csproj"
             },
             "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data\\PizzaRestaurant.Services.Data.csproj": {
               "projectPath": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data\\PizzaRestaurant.Services.Data.csproj"

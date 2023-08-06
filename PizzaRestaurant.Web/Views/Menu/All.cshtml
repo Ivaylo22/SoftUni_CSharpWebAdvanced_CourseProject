@@ -16,16 +16,17 @@
                 <p class="mb-0"><span class="fw-bold">Description: </span>@e.Description</p>
             </div>
             <a asp-controller="Menu" asp-action="Pizzas" asp-route-menuId="@e.Id" class="btn btn-primary mb-2 w-100 p-3 fw-bold">View Pizzas</a>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <a asp-controller="Menu" asp-action="Edit" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-1 fw-bold">Edit</a>
+            @if(this.User.IsAdmin())
+            {
+                <div class="row">
+                    <div class="col-md-6">
+                        <a asp-controller="Menu" asp-action="Edit" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-1 fw-bold">Edit</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-controller="Menu" asp-action="Delete" asp-route-id="@e.Id" class="btn btn-danger mb-2 w-100 p-1 fw-bold">Delete</a>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <a asp-controller="Menu" asp-action="Delete" asp-route-id="@e.Id" class="btn btn-danger mb-2 w-100 p-1 fw-bold">Delete</a>
-                </div>
-            </div>
-            
+            }                
         </div>
 
     }

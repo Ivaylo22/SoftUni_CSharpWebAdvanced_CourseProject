@@ -27,6 +27,7 @@
     <ProjectReference Include="..\PizzaRestaurant.Common\PizzaRestaurant.Common.csproj" />
     <ProjectReference Include="..\PizzaRestaurant.Data.Models\PizzaRestaurant.Data.Models.csproj" />
     <ProjectReference Include="..\PizzaRestaurant.Data\PizzaRestaurant.Data.csproj" />
+    <ProjectReference Include="..\PizzaRestaurant.Services.Data.Models\PizzaRestaurant.Services.Data.Models.csproj" />
     <ProjectReference Include="..\PizzaRestaurant.Services.Data\PizzaRestaurant.Services.Data.csproj" />
     <ProjectReference Include="..\PizzaRestaurant.Web.Infrastructures\PizzaRestaurant.Web.Infrastructures.csproj" />
     <ProjectReference Include="..\PizzaRestaurant.Web.ViewModels\PizzaRestaurant.Web.ViewModels.csproj" />

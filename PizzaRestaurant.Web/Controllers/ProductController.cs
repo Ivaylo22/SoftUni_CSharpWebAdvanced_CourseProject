@@ -1,6 +1,8 @@
 ﻿namespace PizzaRestaurant.Web.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.CodeAnalysis.CSharp.Syntax;
     using PizzaRestaurant.Services.Data;
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Menu;
@@ -9,6 +11,7 @@
 
     using static PizzaRestaurant.Common.NotificationMessagesConstants;
 
+    [Authorize(Roles = "Administrator")]
     public class ProductController : BaseController
     {
         private readonly IProductService productService;
