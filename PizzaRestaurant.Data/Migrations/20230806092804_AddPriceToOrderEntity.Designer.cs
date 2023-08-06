@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PizzaRestaurant.Data;
 
@@ -11,9 +12,10 @@ using PizzaRestaurant.Data;
 namespace PizzaRestaurant.Data.Migrations
 {
     [DbContext(typeof(PizzaRestaurantDbContext))]
-    partial class PizzaRestaurantDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230806092804_AddPriceToOrderEntity")]
+    partial class AddPriceToOrderEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -9,6 +9,10 @@ namespace PizzaRestaurant.Data.Configurations
         public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder
+                .Property(c => c.Price)
+                .HasColumnType("decimal(18, 2)");
+
+            builder
                 .Property(o => o.OrderDate)
                 .HasDefaultValueSql("GETDATE()");
         }

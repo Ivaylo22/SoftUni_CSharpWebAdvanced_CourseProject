@@ -10,13 +10,10 @@
         public DateTime OrderDate { get; set; }
 
         [Required]
-        public int CartId { get; set; }
-
-        [Required]
-        public Cart Cart { get; set; } = null!;
-
-        [Required]
         public Guid UserId { get; set; }
+
+        [Required]
+        public decimal Price { get; set; }
 
         [Required]
         public ApplicationUser User { get; set; } = null!;
