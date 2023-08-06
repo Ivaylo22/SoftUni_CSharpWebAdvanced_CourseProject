@@ -6,7 +6,7 @@
     {
         public Cart()
         {
-            this.Pizzas = new HashSet<Pizza>();
+            this.CartsPizzas = new HashSet<CartPizza>();
         }
 
         [Key]
@@ -16,7 +16,7 @@
         public Guid UserId { get; set; }
 
         [Required]
-        public ICollection<Pizza>? Pizzas { get; set; }
+        public ICollection<CartPizza> CartsPizzas { get; set; }
 
         [Required]
         public decimal FinalPrice { get; set; }

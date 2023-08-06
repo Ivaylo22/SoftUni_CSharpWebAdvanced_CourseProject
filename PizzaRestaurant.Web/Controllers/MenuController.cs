@@ -11,7 +11,6 @@
         private readonly IMenuService menuService;
         private readonly IPizzaService pizzaService;
 
-
         public MenuController(IMenuService _menuService, IPizzaService _pizzaService)
         {
             this.menuService = _menuService;

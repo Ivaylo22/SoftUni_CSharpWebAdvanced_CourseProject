@@ -11,7 +11,7 @@
         {
             this.PizzaProducts = new HashSet<PizzaProduct>();
             this.Toppings = new HashSet<Topping>();
-            this.Carts = new HashSet<Cart>();
+            this.CartsPizzas = new HashSet<CartPizza>();
             this.MenusPizzas = new HashSet<MenuPizza>();
         }
 
@@ -46,6 +46,6 @@
 
         public ICollection<Topping>? Toppings { get; set; }
 
-        public ICollection<Cart>? Carts { get; set; }
+        public ICollection<CartPizza> CartsPizzas { get; set; }
     }
 }

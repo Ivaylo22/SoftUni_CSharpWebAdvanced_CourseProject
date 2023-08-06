@@ -49,7 +49,7 @@
                 .ToArrayAsync();
         }
 
-        public async Task<ProductsForPizzaViewModel> GetProductByIdAsync(int productId)
+        public async Task<ProductsForPizzaViewModel?> GetProductByIdAsync(int productId)
         {
             Product? product = await this.dbContext
                 .Product

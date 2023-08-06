@@ -32,7 +32,7 @@ namespace PizzaRestaurant.Data
 
         public DbSet<PizzaProduct> PizzasProducts { get; set; } = null!;
 
-
+        public DbSet<CartPizza> CartsPizzas { get; set;} = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

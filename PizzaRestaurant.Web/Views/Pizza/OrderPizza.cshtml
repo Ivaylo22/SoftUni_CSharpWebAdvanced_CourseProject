@@ -68,11 +68,14 @@
     function initializePage() {
         const updatedTotalPriceElement = document.getElementById('updatedTotalPrice');
         const checkboxes = document.getElementsByClassName('topping-checkbox');
+        const price = document.getElementById('totalPrice').textContent;
         let totalPrice = parseFloat(updatedTotalPriceElement.value);
 
         for (const checkbox of checkboxes) {
             checkbox.checked = false;
         }
+
+        updatedTotalPriceElement.value = price;
     }
 
     window.onload = initializePage;

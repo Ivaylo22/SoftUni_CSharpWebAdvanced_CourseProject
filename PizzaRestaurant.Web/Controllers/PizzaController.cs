@@ -3,7 +3,6 @@
     using Microsoft.AspNetCore.Mvc;
 
     using PizzaRestaurant.Services.Data.Interfaces;
-    using PizzaRestaurant.Web.ViewModels.Menu;
     using PizzaRestaurant.Web.ViewModels.Pizza;
 
     using static PizzaRestaurant.Common.NotificationMessagesConstants;
@@ -70,7 +69,7 @@
             }
             catch (Exception)
             {
-                this.ModelState.AddModelError(string.Empty, "Unexpected error occurred while trying to add your new house! Please try again later or contact administrator!");
+                this.ModelState.AddModelError(string.Empty, "Unexpected error occurred! Please try again later or contact administrator!");
                 model.AvailableProducts = await productService.GetAllProductsAsync();
                 model.Doughs = await doughService.GetAllDoughsAsync();
 
