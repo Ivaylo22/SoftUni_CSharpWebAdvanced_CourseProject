@@ -41,5 +41,11 @@
             public const int DescriptionMinLength = 3;
             public const int DescriptionMaxLength = 255;
         }
+
+        public static class Admin
+        {
+            public const int NameMinLength = 3;
+            public const int NameMaxLength = 30;
+        }
     }
 }

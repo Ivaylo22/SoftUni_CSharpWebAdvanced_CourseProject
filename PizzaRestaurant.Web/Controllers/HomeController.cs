@@ -1,16 +1,20 @@
 ﻿namespace PizzaRestaurant.Web.Controllers
 {
-    using System.Diagnostics;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
-    using PizzaRestaurant.Web.ViewModels.Home;
+    using static Common.GeneralApplicationConstants;
 
     public class HomeController : BaseController
     {
         [AllowAnonymous]
         public IActionResult Index()
         {
+            if (this.User.IsInRole(AdminRoleName))
+            {
+                return this.RedirectToAction("Index", "Home", new { Area = AdminAreaName });
+            }
+
             if (User?.Identity?.IsAuthenticated ?? false)
             {
                 return RedirectToAction("All", "Menu");
