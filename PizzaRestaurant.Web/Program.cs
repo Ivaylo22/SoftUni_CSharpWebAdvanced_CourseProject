@@ -39,6 +39,8 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 
 builder.Services.AddApplicationServices(typeof(IPizzaService));
 
+builder.Services.AddMemoryCache();
+
 builder.Services
     .AddControllersWithViews()
     .AddMvcOptions(options =>
@@ -46,6 +48,7 @@ builder.Services
         options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
         options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
     });
+
 
 var app = builder.Build();
 
@@ -70,6 +73,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.EnableOnlineUsersCheck();
 
 if (app.Environment.IsDevelopment())
 {

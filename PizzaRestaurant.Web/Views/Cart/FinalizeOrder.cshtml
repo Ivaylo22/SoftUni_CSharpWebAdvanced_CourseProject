@@ -22,7 +22,7 @@
                                 <p class="card-text">Price: $@item.Price</p>
                             </div>
                             <div class="col-md-3 text-center">
-                                <a asp-controller="Cart" asp-action="RemoveFromCart" asp-route-cartId="@item.CartId" asp-route-pizzaId="@item.PizzaId" class="btn btn-danger">Remove</a>
+                                <a asp-area="" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-cartId="@item.CartId" asp-route-pizzaId="@item.PizzaId" class="btn btn-danger">Remove</a>
                             </div>
                         </div>
                     </div>

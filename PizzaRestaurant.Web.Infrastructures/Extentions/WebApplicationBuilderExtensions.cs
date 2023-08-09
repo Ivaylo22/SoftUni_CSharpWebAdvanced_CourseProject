@@ -10,6 +10,7 @@
     using PizzaRestaurant.Data.Models;
 
     using static PizzaRestaurant.Common.GeneralApplicationConstants;
+    using PizzaRestaurant.Web.Infrastructures.Middlewares;
 
     public static class WebApplicationBuilderExtensions
     {
@@ -86,49 +87,9 @@
             return app;
         }
 
-        public static IApplicationBuilder PromoteUserToAdmin(this IApplicationBuilder app, string adminEmail, string userToPromoteEmail)
+        public static IApplicationBuilder EnableOnlineUsersCheck(this IApplicationBuilder app)
         {
-            using IServiceScope scopedServices = app.ApplicationServices.CreateScope();
-
-            IServiceProvider serviceProvider = scopedServices.ServiceProvider;
-
-            UserManager<ApplicationUser> userManager =
-                serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-            RoleManager<IdentityRole<Guid>> roleManager =
-                serviceProvider.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
-
-            Task.Run(async () =>
-            {
-                if (!await roleManager.RoleExistsAsync(AdminRoleName))
-                {
-                    return;
-                }
-
-                ApplicationUser adminUser =
-                    await userManager.FindByEmailAsync(adminEmail);
-
-                if (adminUser == null)
-                {
-                    return;
-                }
-
-                if (!await userManager.IsInRoleAsync(adminUser, AdminRoleName))
-                {
-                    return;
-                }
-
-                ApplicationUser userToPromote =
-                    await userManager.FindByEmailAsync(userToPromoteEmail);
-
-                if (userToPromote != null)
-                {
-                    await userManager.AddToRoleAsync(userToPromote, AdminRoleName);
-                }
-            })
-            .GetAwaiter()
-            .GetResult();
-
-            return app;
+            return app.UseMiddleware<OnlineUsersMiddleware>();
         }
     }
 }
