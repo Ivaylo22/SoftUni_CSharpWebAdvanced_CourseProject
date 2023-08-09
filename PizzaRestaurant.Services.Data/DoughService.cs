@@ -2,8 +2,10 @@
 {
     using Microsoft.EntityFrameworkCore;
     using PizzaRestaurant.Data;
+    using PizzaRestaurant.Data.Models;
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Dough;
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
@@ -15,6 +17,28 @@
         {
             this.dbContext = _dbContext;
         }
+
+        public async Task AddDoughAsync(AddDoughViewModel model)
+        {
+            Dough dough = new Dough()
+            {
+                Name = model.Name,
+            };
+
+            await this.dbContext.Doughs.AddAsync(dough);
+            await this.dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteByIdAsync(int id)
+        {
+            Dough doughToDelete = await dbContext
+                .Doughs
+                .FirstAsync(x => x.Id == id);
+
+            dbContext.Doughs.Remove(doughToDelete);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<DoughViewModel>> GetAllDoughsAsync()
         {
             return await dbContext
