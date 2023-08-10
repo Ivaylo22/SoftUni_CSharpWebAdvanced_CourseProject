@@ -35,12 +35,15 @@
 
         public async Task DeleteByIdAsync(int id)
         {
-            Menu menuToDelete = await this.dbContext
+            Menu? menuToDelete = await dbContext
                 .Menus
-                .FirstAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
 
-            this.dbContext.Menus.Remove(menuToDelete);
-            await this.dbContext.SaveChangesAsync();
+            if (menuToDelete != null)
+            {
+                dbContext.Menus.Remove(menuToDelete);
+                await dbContext.SaveChangesAsync();
+            }
         }
 
         public async Task EditMenuByIdAndEditModelAsync(int id, EditMenuViewModel editModel)
@@ -211,6 +214,19 @@
                 TotalPizzas = await dbContext.Pizzas.CountAsync(),
                 TotalMenus = await dbContext.Menus.CountAsync()
             };
+        }
+
+        public async Task<bool> ExistsByIdAsync(int id)
+        {
+            Menu? menu = await dbContext.Menus
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if( menu == null )
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

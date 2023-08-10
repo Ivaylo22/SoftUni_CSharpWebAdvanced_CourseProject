@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaRestaurant.WebApi", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaRestaurant.Services.Data.Models", "PizzaRestaurant.Services.Data.Models\PizzaRestaurant.Services.Data.Models.csproj", "{0A00BE71-2801-4359-A76B-75EE31DD06B0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1D27C569-838A-4896-953C-C1ABFD77B1E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaRestaurant.Services.Tests", "PizzaRestaurant.Services.Tests\PizzaRestaurant.Services.Tests.csproj", "{C5BE7F5E-8CAC-479C-A26D-D86CBF2EBE13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{0A00BE71-2801-4359-A76B-75EE31DD06B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A00BE71-2801-4359-A76B-75EE31DD06B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A00BE71-2801-4359-A76B-75EE31DD06B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5BE7F5E-8CAC-479C-A26D-D86CBF2EBE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5BE7F5E-8CAC-479C-A26D-D86CBF2EBE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5BE7F5E-8CAC-479C-A26D-D86CBF2EBE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5BE7F5E-8CAC-479C-A26D-D86CBF2EBE13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +90,7 @@ Global
 		{C49FB943-6272-4A44-B4A2-32A7CF303F80} = {0736B965-674B-4951-9145-09D36D7FE79C}
 		{7D4FEEEA-C321-4620-9757-8551BBCC6F40} = {0736B965-674B-4951-9145-09D36D7FE79C}
 		{0A00BE71-2801-4359-A76B-75EE31DD06B0} = {4B7021F2-3700-4FAA-8005-287A2CED3FCB}
+		{C5BE7F5E-8CAC-479C-A26D-D86CBF2EBE13} = {1D27C569-838A-4896-953C-C1ABFD77B1E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B8EDF24-ACBC-4969-980C-99414486E385}

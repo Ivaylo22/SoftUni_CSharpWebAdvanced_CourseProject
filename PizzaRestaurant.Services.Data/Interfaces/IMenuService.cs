@@ -17,6 +17,7 @@
         Task<bool> AddPizzaToMenuAsync(int menuId, int pizzaId);
         Task<RemovePizzaFromMenuViewModel> GetRemovePizzaView(int menuId, int pizzaId);
         Task<StatisticsServiceModel> GetStatisticsAsync();
+        Task<bool> ExistsByIdAsync(int id);
 
     }
 }
