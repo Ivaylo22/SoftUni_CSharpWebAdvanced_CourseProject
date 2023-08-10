@@ -1,8 +1,6 @@
 ﻿namespace PizzaRestaurant.Web.ViewModels.Dough
 {
-
     using System.ComponentModel.DataAnnotations;
-
 
     using static PizzaRestaurant.Common.EntityValidationsConstants.Dough;
 

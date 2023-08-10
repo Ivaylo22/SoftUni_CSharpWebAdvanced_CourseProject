@@ -3,8 +3,6 @@
     using System.ComponentModel.DataAnnotations;
 
     using static PizzaRestaurant.Common.EntityValidationsConstants.Product;
-
-
     public class Product
     {
         public Product()

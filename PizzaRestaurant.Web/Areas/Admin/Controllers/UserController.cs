@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
-using PizzaRestaurant.Services.Data.Interfaces;
-using PizzaRestaurant.Web.ViewModels.User;
-
-namespace PizzaRestaurant.Web.Areas.Admin.Controllers
+﻿namespace PizzaRestaurant.Web.Areas.Admin.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+
+    using PizzaRestaurant.Services.Data.Interfaces;
+    using PizzaRestaurant.Web.ViewModels.User;
+
     public class UserController : BaseAdminController
     {
         private readonly IUserService userService;

@@ -1,11 +1,12 @@
 ﻿namespace PizzaRestaurant.Services.Data
 {
+    using System.Collections.Generic;
     using Microsoft.EntityFrameworkCore;
+
     using PizzaRestaurant.Data;
     using PizzaRestaurant.Data.Models;
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Products;
-    using System.Collections.Generic;
 
     public class ProductService : IProductService
     {

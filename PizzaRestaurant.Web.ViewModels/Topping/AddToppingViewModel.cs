@@ -2,7 +2,6 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-
     using static PizzaRestaurant.Common.EntityValidationsConstants.Topping;
 
     public class AddToppingViewModel

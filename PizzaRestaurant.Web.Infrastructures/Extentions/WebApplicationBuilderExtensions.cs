@@ -1,16 +1,14 @@
 ﻿namespace HouseRentingSystem.Web.Infrastructure.Extensions
 {
-    using Microsoft.AspNetCore.Http;
-
     using System.Reflection;
-
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
+
     using PizzaRestaurant.Data.Models;
+    using PizzaRestaurant.Web.Infrastructures.Middlewares;
 
     using static PizzaRestaurant.Common.GeneralApplicationConstants;
-    using PizzaRestaurant.Web.Infrastructures.Middlewares;
 
     public static class WebApplicationBuilderExtensions
     {

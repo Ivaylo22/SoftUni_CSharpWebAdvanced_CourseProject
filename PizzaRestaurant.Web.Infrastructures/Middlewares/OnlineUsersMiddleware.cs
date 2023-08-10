@@ -4,10 +4,9 @@
 
     using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.Caching.Memory;
-
+    using PizzaRestaurant.Web.Infrastructures.Extentions;
 
     using static Common.GeneralApplicationConstants;
-    using PizzaRestaurant.Web.Infrastructures.Extentions;
 
     public class OnlineUsersMiddleware
     {

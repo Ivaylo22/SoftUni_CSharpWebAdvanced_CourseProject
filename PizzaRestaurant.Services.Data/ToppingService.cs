@@ -1,12 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PizzaRestaurant.Data;
-using PizzaRestaurant.Data.Models;
-using PizzaRestaurant.Services.Data.Interfaces;
-using PizzaRestaurant.Web.ViewModels.Products;
-using PizzaRestaurant.Web.ViewModels.Topping;
-
-namespace PizzaRestaurant.Services.Data
+﻿namespace PizzaRestaurant.Services.Data
 {
+    using Microsoft.EntityFrameworkCore;
+
+    using PizzaRestaurant.Data;
+    using PizzaRestaurant.Data.Models;
+    using PizzaRestaurant.Services.Data.Interfaces;
+    using PizzaRestaurant.Web.ViewModels.Topping;
+
     public class ToppingService : IToppingService
     {
         private readonly PizzaRestaurantDbContext dbContext;

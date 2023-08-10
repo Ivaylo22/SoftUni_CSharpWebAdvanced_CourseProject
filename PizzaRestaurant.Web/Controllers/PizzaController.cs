@@ -1,6 +1,5 @@
 ﻿namespace PizzaRestaurant.Web.Controllers
 {
-    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     using PizzaRestaurant.Services.Data.Interfaces;

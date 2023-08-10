@@ -1,11 +1,8 @@
-﻿using PizzaRestaurant.Web.Controllers;
-
-namespace PizzaRestaurant.Web.Areas.Admin.Controllers
+﻿namespace PizzaRestaurant.Web.Areas.Admin.Controllers
 {
-    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+
     using PizzaRestaurant.Services.Data.Interfaces;
-    using PizzaRestaurant.Web.ViewModels.Products;
     using PizzaRestaurant.Web.ViewModels.Topping;
 
     using static PizzaRestaurant.Common.NotificationMessagesConstants;

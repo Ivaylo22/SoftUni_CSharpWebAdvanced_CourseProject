@@ -1,8 +1,8 @@
-﻿using PizzaRestaurant.Web.ViewModels.Products;
-using PizzaRestaurant.Web.ViewModels.Topping;
-
-namespace PizzaRestaurant.Web.ViewModels.Pizza
+﻿namespace PizzaRestaurant.Web.ViewModels.Pizza
 {
+    using PizzaRestaurant.Web.ViewModels.Products;
+    using PizzaRestaurant.Web.ViewModels.Topping;
+
     public class OrderPizzaViewModel
     {
         public OrderPizzaViewModel()

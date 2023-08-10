@@ -1,9 +1,10 @@
 ﻿namespace PizzaRestaurant.Web.Areas.Admin.Controllers
 {
-    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Pizza;
+
     using static PizzaRestaurant.Common.NotificationMessagesConstants;
 
     public class PizzaController : BaseAdminController

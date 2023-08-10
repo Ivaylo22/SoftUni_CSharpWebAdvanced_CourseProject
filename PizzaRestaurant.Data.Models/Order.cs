@@ -1,7 +1,6 @@
 ﻿namespace PizzaRestaurant.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
-
     public class Order
     {
         [Key]

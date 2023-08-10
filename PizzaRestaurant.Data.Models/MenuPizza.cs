@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace PizzaRestaurant.Data.Models
+﻿namespace PizzaRestaurant.Data.Models
 {
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class MenuPizza
     {
         [ForeignKey(nameof(Pizza))]

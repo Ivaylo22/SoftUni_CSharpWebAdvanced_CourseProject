@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.15" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="Moq" Version="4.20.2" />
@@ -26,6 +27,8 @@
     <ProjectReference Include="..\PizzaRestaurant.Services.Data.Models\PizzaRestaurant.Services.Data.Models.csproj" />
     <ProjectReference Include="..\PizzaRestaurant.Services.Data\PizzaRestaurant.Services.Data.csproj" />
     <ProjectReference Include="..\PizzaRestaurant.Web.ViewModels\PizzaRestaurant.Web.ViewModels.csproj" />
+    <ProjectReference Include="..\PizzaRestaurant.WebApi\PizzaRestaurant.WebApi.csproj" />
+    <ProjectReference Include="..\PizzaRestaurant.Web\PizzaRestaurant.Web.csproj" />
   </ItemGroup>
 
 </Project>

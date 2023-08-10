@@ -1,13 +1,13 @@
 ﻿namespace PizzaRestaurant.Services.Data
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
     using Microsoft.EntityFrameworkCore;
+
     using PizzaRestaurant.Data;
     using PizzaRestaurant.Data.Models;
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Dough;
-    using System;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     public class DoughService : IDoughService
     {

@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Reflection;
-
-namespace PizzaRestaurant.Data.Configurations
+﻿namespace PizzaRestaurant.Data.Configurations
 {
+    using Microsoft.EntityFrameworkCore;
+    using System.Reflection;
+
     public static class EntityConfigurationHelper
     {
         public static void ApplyEntityConfigurations(ModelBuilder modelBuilder)

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PizzaRestaurant.Web.ViewModels.User
+﻿namespace PizzaRestaurant.Web.ViewModels.User
 {
     public class UserViewModel
     {

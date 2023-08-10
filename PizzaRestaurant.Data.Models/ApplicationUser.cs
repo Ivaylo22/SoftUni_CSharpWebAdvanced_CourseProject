@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace PizzaRestaurant.Data.Models
+﻿namespace PizzaRestaurant.Data.Models
 {
+    using Microsoft.AspNetCore.Identity;
+
     public class ApplicationUser : IdentityUser<Guid>
     {
         public ApplicationUser()

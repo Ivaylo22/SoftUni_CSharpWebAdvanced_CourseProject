@@ -1,13 +1,12 @@
 ﻿namespace PizzaRestaurant.Services.Data
 {
     using Microsoft.EntityFrameworkCore;
+
     using PizzaRestaurant.Data;
     using PizzaRestaurant.Data.Models;
     using PizzaRestaurant.Services.Data.Interfaces;
-    using PizzaRestaurant.Web.ViewModels.Menu;
     using PizzaRestaurant.Web.ViewModels.Pizza;
     using PizzaRestaurant.Web.ViewModels.Products;
-    using PizzaRestaurant.Web.ViewModels.Topping;
 
     public class PizzaService : IPizzaService
     {

@@ -1,10 +1,11 @@
 ﻿namespace PizzaRestaurant.Web.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Cart;
-    using static PizzaRestaurant.Common.NotificationMessagesConstants;
 
+    using static PizzaRestaurant.Common.NotificationMessagesConstants;
     public class CartController : BaseController
     {
         private readonly ICartService cartService;

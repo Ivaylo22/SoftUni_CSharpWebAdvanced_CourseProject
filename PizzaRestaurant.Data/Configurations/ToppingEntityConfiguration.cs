@@ -4,7 +4,6 @@
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
     using PizzaRestaurant.Data.Models;
-
     public class ToppingEntityConfiguration : IEntityTypeConfiguration<Topping>
     {
         public void Configure(EntityTypeBuilder<Topping> builder)

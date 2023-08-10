@@ -1,11 +1,12 @@
 ﻿namespace PizzaRestaurant.Services.Data
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
     using Microsoft.EntityFrameworkCore;
+
     using PizzaRestaurant.Data;
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.User;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     public class UserService : IUserService
     {

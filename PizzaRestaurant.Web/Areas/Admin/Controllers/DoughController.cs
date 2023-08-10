@@ -38,7 +38,7 @@ namespace PizzaRestaurant.Web.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View(nameof(Add), model);
             }
 
             await doughService.AddDoughAsync(model);
@@ -60,14 +60,17 @@ namespace PizzaRestaurant.Web.Areas.Admin.Controllers
         {
             try
             {
-                DoughViewModel model =
-                    await doughService.GetDoughByIdAsync(doughId);
-                return View(model);
+                DoughViewModel model = await doughService.GetDoughByIdAsync(doughId);
+                if (model == null)
+                {
+                    return RedirectToAction("Error404", "Home");
+                }
 
+                return View(model);
             }
             catch (Exception)
             {
-                TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                TempData[ErrorMessage] = "Unexpected error occurred. Try later or contact administrator!";
                 return RedirectToAction("Options", "Dough");
             }
         }
@@ -81,7 +84,7 @@ namespace PizzaRestaurant.Web.Areas.Admin.Controllers
             }
             catch (Exception)
             {
-                TempData[ErrorMessage] = "Unexpected error occured. Try later or contact administrator!";
+                TempData[ErrorMessage] = "Unexpected error occurred. Try later or contact administrator!";
                 return View(doughModel);
             }
 

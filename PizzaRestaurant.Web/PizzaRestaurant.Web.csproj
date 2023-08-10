@@ -34,8 +34,4 @@
     <ProjectReference Include="..\PizzaRestaurant.Web.ViewModels\PizzaRestaurant.Web.ViewModels.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Admin\ViewModels\" />
-  </ItemGroup>
-
 </Project>

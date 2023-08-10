@@ -1,13 +1,10 @@
 ﻿namespace PizzaRestaurant.Web.Controllers
 {
-    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     using PizzaRestaurant.Services.Data.Interfaces;
-    using PizzaRestaurant.Web.Infrastructures.Extentions;
     using PizzaRestaurant.Web.ViewModels.Menu;
-    using System.Data;
-    using static PizzaRestaurant.Common.NotificationMessagesConstants;
+
 
     public class MenuController : BaseController
     {

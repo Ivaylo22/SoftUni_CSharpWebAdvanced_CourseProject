@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using PizzaRestaurant.Services.Data.Interfaces;
-using PizzaRestaurant.Services.Data.Models;
-
-namespace PizzaRestaurant.WebApi.Controllers
+﻿namespace PizzaRestaurant.WebApi.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using PizzaRestaurant.Services.Data.Interfaces;
+    using PizzaRestaurant.Services.Data.Models;
+
     [Route("api/statistics")]
     [ApiController]
     public class StatisticsApiController : ControllerBase

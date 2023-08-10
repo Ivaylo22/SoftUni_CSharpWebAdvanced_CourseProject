@@ -1,8 +1,7 @@
-﻿using PizzaRestaurant.Web.ViewModels.Menu;
-using PizzaRestaurant.Web.ViewModels.Pizza;
-
-namespace PizzaRestaurant.Services.Data.Interfaces
+﻿namespace PizzaRestaurant.Services.Data.Interfaces
 {
+    using PizzaRestaurant.Web.ViewModels.Pizza;
+
     public interface IPizzaService
     {
         Task AddPizzaAsync(AddPizzaViewModel model);

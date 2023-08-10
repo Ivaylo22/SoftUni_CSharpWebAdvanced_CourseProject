@@ -1,7 +1,7 @@
-﻿using PizzaRestaurant.Web.ViewModels.Topping;
-
-namespace PizzaRestaurant.Services.Data.Interfaces
+﻿namespace PizzaRestaurant.Services.Data.Interfaces
 {
+    using PizzaRestaurant.Web.ViewModels.Topping;
+
     public interface IToppingService
     {
         Task AddToppingAsync(AddToppingViewModel model);

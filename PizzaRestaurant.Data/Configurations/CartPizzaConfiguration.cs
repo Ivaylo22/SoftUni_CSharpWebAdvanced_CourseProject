@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PizzaRestaurant.Data.Models;
-
-namespace PizzaRestaurant.Data.Configurations
+﻿namespace PizzaRestaurant.Data.Configurations
 {
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+    using PizzaRestaurant.Data.Models;
+
     public class CartPizzaConfiguration : IEntityTypeConfiguration<CartPizza>
     {
         public void Configure(EntityTypeBuilder<CartPizza> builder)

@@ -1,7 +1,7 @@
-﻿using PizzaRestaurant.Web.ViewModels.Cart;
-
-namespace PizzaRestaurant.Services.Data.Interfaces
+﻿namespace PizzaRestaurant.Services.Data.Interfaces
 {
+    using PizzaRestaurant.Web.ViewModels.Cart;
+
     public interface ICartService
     {
         Task AddPizzaToCartAsync(int pizzaId, decimal updatedTotalPrice, string userId);

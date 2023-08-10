@@ -4,10 +4,8 @@
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
     using PizzaRestaurant.Data.Models;
-
     public class PizzaEntityConfiguration : IEntityTypeConfiguration<Pizza>
     {
-
         public void Configure(EntityTypeBuilder<Pizza> builder)
         {
             builder

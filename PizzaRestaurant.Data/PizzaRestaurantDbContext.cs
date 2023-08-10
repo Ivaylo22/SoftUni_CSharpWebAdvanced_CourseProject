@@ -1,9 +1,9 @@
-﻿
-namespace PizzaRestaurant.Data
+﻿namespace PizzaRestaurant.Data
 {
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+
     using PizzaRestaurant.Data.Configurations;
     using PizzaRestaurant.Data.Models;
 

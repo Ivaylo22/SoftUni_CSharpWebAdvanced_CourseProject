@@ -2,6 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
     using PizzaRestaurant.Web.ViewModels.Pizza;
+
     using static PizzaRestaurant.Common.EntityValidationsConstants.Menu;
 
     public class EditMenuViewModel

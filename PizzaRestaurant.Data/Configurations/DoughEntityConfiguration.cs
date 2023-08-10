@@ -3,7 +3,6 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
     using PizzaRestaurant.Data.Models;
-
     public class DoughEntityConfiguration : IEntityTypeConfiguration<Dough>
     {
         public void Configure(EntityTypeBuilder<Dough> builder)

@@ -1,7 +1,7 @@
-﻿using PizzaRestaurant.Web.ViewModels.Products;
-
-namespace PizzaRestaurant.Services.Data.Interfaces
+﻿namespace PizzaRestaurant.Services.Data.Interfaces
 {
+    using PizzaRestaurant.Web.ViewModels.Products;
+
     public interface IProductService
     {
         Task AddProductAsync(AddProductViewModel model);

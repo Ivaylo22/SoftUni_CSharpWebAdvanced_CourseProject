@@ -1,0 +1,11 @@
+{
+  "PizzaRestaurant.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Common",
+  "PizzaRestaurant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data",
+  "PizzaRestaurant.Data.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Data.Models",
+  "PizzaRestaurant.Services.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data",
+  "PizzaRestaurant.Services.Data.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Services.Data.Models",
+  "PizzaRestaurant.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web",
+  "PizzaRestaurant.Web.Infrastructures, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web.Infrastructures",
+  "PizzaRestaurant.Web.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.Web.ViewModels",
+  "PizzaRestaurant.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Ivaylo\\Programming\\Softuni\\SoftUni_CSharpWebAdvanced_CourseProject\\PizzaRestaurant.WebApi"
+}
