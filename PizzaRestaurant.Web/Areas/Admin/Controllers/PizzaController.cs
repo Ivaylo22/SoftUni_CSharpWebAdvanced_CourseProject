@@ -54,7 +54,7 @@
                 await pizzaService.AddPizzaAsync(model);
                 TempData[SuccessMessage] = "Pizza was added successfully!";
 
-                return RedirectToAction("All", "Pizza", new { area = "" });
+                return RedirectToAction("Index", "Home", new { area = "Admin" });
 
             }
             catch (Exception)

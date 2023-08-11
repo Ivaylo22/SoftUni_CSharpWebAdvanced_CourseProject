@@ -11,26 +11,16 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th><label>Id</label></th>
             <th><label>Email</label></th>
-            <th><label>User Is Online</label></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var user in Model)
         {
             <tr>
+                <td><label>@user.Id</label></td>
                 <td><label>@user.Email</label></td>
-
-                <td>
-                    @if (OnlineUsersMiddleware.CheckIfUserIsOnline(user.Id))
-                    {
-                        <label>✔</label>
-                    }
-                    else
-                    {
-                        <label class="text-center">❌</label>
-                    }
-                </td>
             </tr>
         }
     </tbody>

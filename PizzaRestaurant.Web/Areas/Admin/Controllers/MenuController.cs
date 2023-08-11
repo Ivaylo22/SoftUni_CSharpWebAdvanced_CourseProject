@@ -38,7 +38,7 @@
 
             await menuService.AddMenuAsync(model);
 
-            return RedirectToAction("All", "Menu", new { area = "" });
+            return RedirectToAction("Index", "Home", new { area = "Admin" });
         }
 
         [HttpGet]
