@@ -1,10 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NUnit.Framework.Internal.Execution;
-using PizzaRestaurant.Data;
-using PizzaRestaurant.Data.Models;
-
-namespace PizzaRestaurant.Services.Tests.UnitTests
+﻿namespace PizzaRestaurant.Services.Tests.UnitTests
 {
+    using PizzaRestaurant.Data;
+    using PizzaRestaurant.Data.Models;
+
     public static class DatabaseSeeder
     {
         public static Menu MenuTest;

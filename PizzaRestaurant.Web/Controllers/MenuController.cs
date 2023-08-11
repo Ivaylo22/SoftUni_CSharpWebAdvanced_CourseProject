@@ -5,7 +5,6 @@
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Web.ViewModels.Menu;
 
-
     public class MenuController : BaseController
     {
         private readonly IMenuService menuService;

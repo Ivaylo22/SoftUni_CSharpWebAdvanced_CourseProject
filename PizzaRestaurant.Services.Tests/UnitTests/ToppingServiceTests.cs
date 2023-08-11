@@ -7,9 +7,10 @@
     using PizzaRestaurant.Services.Data.Interfaces;
     using PizzaRestaurant.Services.Data;
 
-    using static DatabaseSeeder;
     using PizzaRestaurant.Web.ViewModels.Topping;
     using PizzaRestaurant.Data.Models;
+
+    using static DatabaseSeeder;
 
     public class ToppingServiceTests
     {

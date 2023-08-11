@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Moq;
-using PizzaRestaurant.Services.Data.Interfaces;
-using PizzaRestaurant.Web.Controllers;
-using PizzaRestaurant.Web.ViewModels.Menu;
-using PizzaRestaurant.Web.ViewModels.Pizza;
-
-namespace PizzaRestaurant.Services.Tests.IntegrationTests
+﻿namespace PizzaRestaurant.Services.Tests.IntegrationTests
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Moq;
+
+    using PizzaRestaurant.Services.Data.Interfaces;
+    using PizzaRestaurant.Web.Controllers;
+    using PizzaRestaurant.Web.ViewModels.Menu;
+    using PizzaRestaurant.Web.ViewModels.Pizza;
+
     [TestFixture]
     public class MenuControllerTests
     {

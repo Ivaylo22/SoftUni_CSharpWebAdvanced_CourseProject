@@ -1,17 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
-using Moq;
-using PizzaRestaurant.Services.Data.Interfaces;
-using PizzaRestaurant.Web.Areas.Admin.Controllers;
-using PizzaRestaurant.Web.ViewModels.Dough;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PizzaRestaurant.Services.Tests.IntegrationTests
+﻿namespace PizzaRestaurant.Services.Tests.IntegrationTests
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Moq;
+
+    using PizzaRestaurant.Services.Data.Interfaces;
+    using PizzaRestaurant.Web.Areas.Admin.Controllers;
+    using PizzaRestaurant.Web.ViewModels.Dough;
+
     internal class DoughAdminControllerTests
     {
         private DoughController doughController;
